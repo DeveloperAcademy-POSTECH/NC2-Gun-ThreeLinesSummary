@@ -16,6 +16,8 @@
 		ABEC710E28BC7F0300488104 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC710D28BC7F0300488104 /* UIImageView.swift */; };
 		ABEC711028BC81D400488104 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC710F28BC81D400488104 /* CustomButton.swift */; };
 		ABEC711428BC8A2000488104 /* PhaseTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC711328BC8A2000488104 /* PhaseTemplateView.swift */; };
+		ABEC711628BCA48600488104 /* PasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC711528BCA48600488104 /* PasteView.swift */; };
+		ABEC711828BCA9C900488104 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC711728BCA9C900488104 /* UIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		ABEC710D28BC7F0300488104 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		ABEC710F28BC81D400488104 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		ABEC711328BC8A2000488104 /* PhaseTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseTemplateView.swift; sourceTree = "<group>"; };
+		ABEC711528BCA48600488104 /* PasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteView.swift; sourceTree = "<group>"; };
+		ABEC711728BCA9C900488104 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				ABEC710C28BC7EED00488104 /* Helpers */,
-				ABEC710A28BC75F900488104 /* BorderedTextField.swift */,
+				ABEC711528BCA48600488104 /* PasteView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -96,6 +100,8 @@
 				ABEC710D28BC7F0300488104 /* UIImageView.swift */,
 				ABEC710F28BC81D400488104 /* CustomButton.swift */,
 				ABEC711328BC8A2000488104 /* PhaseTemplateView.swift */,
+				ABEC710A28BC75F900488104 /* BorderedTextField.swift */,
+				ABEC711728BCA9C900488104 /* UIButton.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -172,11 +178,13 @@
 			files = (
 				ABEC711428BC8A2000488104 /* PhaseTemplateView.swift in Sources */,
 				ABB8B80928B8B0D600B7818F /* ViewController.swift in Sources */,
+				ABEC711628BCA48600488104 /* PasteView.swift in Sources */,
 				ABEC710E28BC7F0300488104 /* UIImageView.swift in Sources */,
 				ABEC711028BC81D400488104 /* CustomButton.swift in Sources */,
 				ABB8B80528B8B0D600B7818F /* AppDelegate.swift in Sources */,
 				ABEC710B28BC75F900488104 /* BorderedTextField.swift in Sources */,
 				ABB8B80728B8B0D600B7818F /* SceneDelegate.swift in Sources */,
+				ABEC711828BCA9C900488104 /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +341,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -362,7 +370,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
