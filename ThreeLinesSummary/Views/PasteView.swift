@@ -22,10 +22,7 @@ class PasteView: PhaseTemplateView {
         
         textField.textPublisher
             .sink { [unowned self] text in
-                let attributedTitle = translateButton.attributedTitle(for: [])
-                translateButton.isEnabled = !text.isEmpty
-                translateButton.configuration = text.isEmpty ? .gray() : .filled()
-                translateButton.setAttributedTitle(attributedTitle, for: [])
+                translateButton.decideActivation(with: text)
             }
             .store(in: &subscriptions)
     }

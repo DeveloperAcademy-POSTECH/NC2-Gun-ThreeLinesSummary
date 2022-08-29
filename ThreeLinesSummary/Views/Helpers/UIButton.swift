@@ -17,4 +17,12 @@ extension UIButton {
         
         return button
     }
+    
+    func decideActivation(with text: String, activatedConfiguration: UIButton.Configuration = .filled()) {
+        let attributedTitle = self.attributedTitle(for: [])
+        
+        self.isEnabled = !text.isEmpty
+        self.configuration = text.isEmpty ? .gray() : activatedConfiguration
+        self.setAttributedTitle(attributedTitle, for: [])
+    }
 }
