@@ -8,6 +8,16 @@
 import UIKit
 
 class BorderedTextField: UIView {
+    var text: String {
+        get {
+            textField.text
+        }
+        
+        set {
+            textField.text = newValue
+        }
+    }
+    
     private let textField: UITextView = {
         let textField = UITextView()
         textField.isEditable = true
