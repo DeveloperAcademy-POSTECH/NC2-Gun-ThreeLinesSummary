@@ -15,6 +15,7 @@
 		ABEC710B28BC75F900488104 /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC710A28BC75F900488104 /* BorderedTextField.swift */; };
 		ABEC710E28BC7F0300488104 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC710D28BC7F0300488104 /* UIImageView.swift */; };
 		ABEC711028BC81D400488104 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC710F28BC81D400488104 /* CustomButton.swift */; };
+		ABEC711428BC8A2000488104 /* PhaseTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC711328BC8A2000488104 /* PhaseTemplateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		ABEC710A28BC75F900488104 /* BorderedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextField.swift; sourceTree = "<group>"; };
 		ABEC710D28BC7F0300488104 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		ABEC710F28BC81D400488104 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		ABEC711328BC8A2000488104 /* PhaseTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseTemplateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				ABEC710D28BC7F0300488104 /* UIImageView.swift */,
 				ABEC710F28BC81D400488104 /* CustomButton.swift */,
+				ABEC711328BC8A2000488104 /* PhaseTemplateView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABEC711428BC8A2000488104 /* PhaseTemplateView.swift in Sources */,
 				ABB8B80928B8B0D600B7818F /* ViewController.swift in Sources */,
 				ABEC710E28BC7F0300488104 /* UIImageView.swift in Sources */,
 				ABEC711028BC81D400488104 /* CustomButton.swift in Sources */,
@@ -316,8 +320,10 @@
 				INFOPLIST_FILE = ThreeLinesSummary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -343,8 +349,10 @@
 				INFOPLIST_FILE = ThreeLinesSummary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
