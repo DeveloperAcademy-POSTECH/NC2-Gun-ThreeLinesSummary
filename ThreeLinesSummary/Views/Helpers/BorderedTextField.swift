@@ -6,18 +6,9 @@
 //
 
 import UIKit
+import Combine
 
 class BorderedTextField: UIView {
-    var text: String {
-        get {
-            textField.text
-        }
-        
-        set {
-            textField.text = newValue
-        }
-    }
-    
     private let textField: UITextView = {
         let textField = UITextView()
         textField.isEditable = true
@@ -25,6 +16,9 @@ class BorderedTextField: UIView {
         
         return textField
     }()
+    
+    @Published private var text = ""
+    lazy var textPublisher = $text.eraseToAnyPublisher()
     
     init(height: CGFloat, isCopiable: Bool = false) {
         super.init(frame: .zero)
@@ -58,6 +52,8 @@ class BorderedTextField: UIView {
             textField.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
             textField.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20)
         ])
+        
+        textField.delegate = self
     }
     
     private func addCopyButton() {
@@ -82,5 +78,11 @@ class BorderedTextField: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension BorderedTextField: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        text = textView.text
     }
 }
