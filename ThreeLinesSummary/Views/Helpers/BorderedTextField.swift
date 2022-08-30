@@ -17,8 +17,8 @@ class BorderedTextField: UIView {
         return textField
     }()
     
-    @Published private var text = ""
-    lazy var textPublisher = $text.eraseToAnyPublisher()
+    private var textSubject = CurrentValueSubject<String, Never>("")
+    lazy var textPublisher = textSubject.eraseToAnyPublisher()
     
     init(height: CGFloat, isCopiable: Bool = false) {
         super.init(frame: .zero)
@@ -83,6 +83,6 @@ class BorderedTextField: UIView {
 
 extension BorderedTextField: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        text = textView.text
+        textSubject.value = textView.text
     }
 }
