@@ -8,28 +8,38 @@
 import UIKit
 
 class LoadingView: UIView {
-    let loadingMessageLabel: UILabel = {
+    private let loadingMessageLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         
         return label
     }()
     
-    let activityIndicator: UIActivityIndicatorView = {
+    private let activityIndicator: UIActivityIndicatorView = {
         let activityView = UIActivityIndicatorView(style: .large)
         activityView.color = .gray
         
         return activityView
     }()
     
-    init(message: String) {
-        loadingMessageLabel.text = message
+    var message: String {
+        get {
+            loadingMessageLabel.text ?? ""
+        }
+        
+        set {
+            loadingMessageLabel.text = newValue
+        }
+    }
+    
+    init() {
         super.init(frame: .zero)
         
         [loadingMessageLabel, activityIndicator].forEach { [unowned self] view in
             view.translatesAutoresizingMaskIntoConstraints = false
             self.addSubview(view)
         }
+        
         NSLayoutConstraint.activate([
             activityIndicator.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: self.centerYAnchor),
