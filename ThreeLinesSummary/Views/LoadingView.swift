@@ -35,7 +35,7 @@ class LoadingView: UIView {
     init() {
         super.init(frame: .zero)
         
-        [loadingMessageLabel, activityIndicator].forEach { [unowned self] view in
+        [loadingMessageLabel, activityIndicator].forEach { view in
             view.translatesAutoresizingMaskIntoConstraints = false
             self.addSubview(view)
         }
