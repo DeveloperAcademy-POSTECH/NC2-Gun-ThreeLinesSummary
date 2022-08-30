@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB2FDA8328BDC96F0008826F /* TranslateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FDA8228BDC96F0008826F /* TranslateView.swift */; };
+		AB2FDA8528BDD5FA0008826F /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FDA8428BDD5FA0008826F /* SummaryView.swift */; };
+		AB2FDA8928BDD9E20008826F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FDA8828BDD9E20008826F /* LoadingView.swift */; };
+		AB2FDA8B28BDE21E0008826F /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FDA8A28BDE21E0008826F /* ErrorView.swift */; };
 		ABB8B80528B8B0D600B7818F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB8B80428B8B0D600B7818F /* AppDelegate.swift */; };
 		ABB8B80728B8B0D600B7818F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB8B80628B8B0D600B7818F /* SceneDelegate.swift */; };
 		ABB8B80928B8B0D600B7818F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB8B80828B8B0D600B7818F /* ViewController.swift */; };
@@ -21,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB2FDA8228BDC96F0008826F /* TranslateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateView.swift; sourceTree = "<group>"; };
+		AB2FDA8428BDD5FA0008826F /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		AB2FDA8828BDD9E20008826F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		AB2FDA8A28BDE21E0008826F /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		ABB8B80128B8B0D600B7818F /* ThreeLinesSummary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeLinesSummary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB8B80428B8B0D600B7818F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABB8B80628B8B0D600B7818F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +98,10 @@
 			children = (
 				ABEC710C28BC7EED00488104 /* Helpers */,
 				ABEC711528BCA48600488104 /* PasteView.swift */,
+				AB2FDA8228BDC96F0008826F /* TranslateView.swift */,
+				AB2FDA8428BDD5FA0008826F /* SummaryView.swift */,
+				AB2FDA8828BDD9E20008826F /* LoadingView.swift */,
+				AB2FDA8A28BDE21E0008826F /* ErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -181,10 +193,14 @@
 				ABEC711628BCA48600488104 /* PasteView.swift in Sources */,
 				ABEC710E28BC7F0300488104 /* UIImageView.swift in Sources */,
 				ABEC711028BC81D400488104 /* CustomButton.swift in Sources */,
+				AB2FDA8928BDD9E20008826F /* LoadingView.swift in Sources */,
+				AB2FDA8328BDC96F0008826F /* TranslateView.swift in Sources */,
 				ABB8B80528B8B0D600B7818F /* AppDelegate.swift in Sources */,
 				ABEC710B28BC75F900488104 /* BorderedTextField.swift in Sources */,
 				ABB8B80728B8B0D600B7818F /* SceneDelegate.swift in Sources */,
 				ABEC711828BCA9C900488104 /* UIButton.swift in Sources */,
+				AB2FDA8B28BDE21E0008826F /* ErrorView.swift in Sources */,
+				AB2FDA8528BDD5FA0008826F /* SummaryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
