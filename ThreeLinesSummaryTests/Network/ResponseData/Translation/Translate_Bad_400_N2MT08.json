@@ -1,0 +1,6 @@
+{
+    "error": {
+        "errorCode": "N2MT08",
+        "message": "text parameter exceeds max length"
+    }
+}
