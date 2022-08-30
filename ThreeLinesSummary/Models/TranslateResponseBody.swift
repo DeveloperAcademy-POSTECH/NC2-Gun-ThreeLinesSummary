@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TranslateDataDecoder: Decodable {
+struct TranslateResponseBody: Decodable {
     let message: Message
     
     struct Message: Decodable {
