@@ -1,0 +1,6 @@
+{
+    "error": {
+        "errorCode": "E001",
+        "message": "Unsupported empty or blank text"
+    }
+}

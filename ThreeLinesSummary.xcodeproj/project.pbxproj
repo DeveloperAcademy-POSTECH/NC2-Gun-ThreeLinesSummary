@@ -17,8 +17,16 @@
 		AB2FDAA928BE44290008826F /* Translate_Bad_400_N2MT07.json in Resources */ = {isa = PBXBuildFile; fileRef = AB2FDAA828BE44290008826F /* Translate_Bad_400_N2MT07.json */; };
 		AB2FDAAD28BE44C00008826F /* Translate_Bad_400_N2MT08.json in Resources */ = {isa = PBXBuildFile; fileRef = AB2FDAAC28BE44C00008826F /* Translate_Bad_400_N2MT08.json */; };
 		AB2FDAB328BE45390008826F /* Translate_Bad_500_N2MT99.json in Resources */ = {isa = PBXBuildFile; fileRef = AB2FDAB228BE45390008826F /* Translate_Bad_500_N2MT99.json */; };
-		AB2FDAB728BE45840008826F /* Translate_Bad_500_Unknown.json in Resources */ = {isa = PBXBuildFile; fileRef = AB2FDAB628BE45840008826F /* Translate_Bad_500_Unknown.json */; };
+		AB2FDAB728BE45840008826F /* Translate_Bad_Unknown.json in Resources */ = {isa = PBXBuildFile; fileRef = AB2FDAB628BE45840008826F /* Translate_Bad_Unknown.json */; };
 		AB2FDABA28BE45D50008826F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FDAB928BE45D50008826F /* Data.swift */; };
+		AB2FDABD28BE4BFC0008826F /* Summary_Good.json in Resources */ = {isa = PBXBuildFile; fileRef = AB2FDABC28BE4BFC0008826F /* Summary_Good.json */; };
+		AB2FDABF28BE4E220008826F /* Summary_Bad_400_E001.json in Resources */ = {isa = PBXBuildFile; fileRef = AB2FDABE28BE4E220008826F /* Summary_Bad_400_E001.json */; };
+		AB2FDAC128BE4ED10008826F /* Summary_Bad_400_E002.json in Resources */ = {isa = PBXBuildFile; fileRef = AB2FDAC028BE4ED10008826F /* Summary_Bad_400_E002.json */; };
+		AB2FDAC328BE4F650008826F /* Summary_Bad_400_E003.json in Resources */ = {isa = PBXBuildFile; fileRef = AB2FDAC228BE4F650008826F /* Summary_Bad_400_E003.json */; };
+		AB2FDAC728BE50C70008826F /* Summary_Bad_400_E100.json in Resources */ = {isa = PBXBuildFile; fileRef = AB2FDAC628BE50C70008826F /* Summary_Bad_400_E100.json */; };
+		AB2FDAC928BE51990008826F /* Summary_Bad_400_E102.json in Resources */ = {isa = PBXBuildFile; fileRef = AB2FDAC828BE51990008826F /* Summary_Bad_400_E102.json */; };
+		AB2FDACD28BE52170008826F /* Summary_Bad_500.json in Resources */ = {isa = PBXBuildFile; fileRef = AB2FDACC28BE52170008826F /* Summary_Bad_500.json */; };
+		AB2FDACF28BE524E0008826F /* Summary_Bad_Unknown.json in Resources */ = {isa = PBXBuildFile; fileRef = AB2FDACE28BE524E0008826F /* Summary_Bad_Unknown.json */; };
 		ABB8B80528B8B0D600B7818F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB8B80428B8B0D600B7818F /* AppDelegate.swift */; };
 		ABB8B80728B8B0D600B7818F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB8B80628B8B0D600B7818F /* SceneDelegate.swift */; };
 		ABB8B80928B8B0D600B7818F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB8B80828B8B0D600B7818F /* ViewController.swift */; };
@@ -55,8 +63,16 @@
 		AB2FDAA828BE44290008826F /* Translate_Bad_400_N2MT07.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translate_Bad_400_N2MT07.json; sourceTree = "<group>"; };
 		AB2FDAAC28BE44C00008826F /* Translate_Bad_400_N2MT08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translate_Bad_400_N2MT08.json; sourceTree = "<group>"; };
 		AB2FDAB228BE45390008826F /* Translate_Bad_500_N2MT99.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translate_Bad_500_N2MT99.json; sourceTree = "<group>"; };
-		AB2FDAB628BE45840008826F /* Translate_Bad_500_Unknown.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translate_Bad_500_Unknown.json; sourceTree = "<group>"; };
+		AB2FDAB628BE45840008826F /* Translate_Bad_Unknown.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translate_Bad_Unknown.json; sourceTree = "<group>"; };
 		AB2FDAB928BE45D50008826F /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		AB2FDABC28BE4BFC0008826F /* Summary_Good.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Summary_Good.json; sourceTree = "<group>"; };
+		AB2FDABE28BE4E220008826F /* Summary_Bad_400_E001.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Summary_Bad_400_E001.json; sourceTree = "<group>"; };
+		AB2FDAC028BE4ED10008826F /* Summary_Bad_400_E002.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Summary_Bad_400_E002.json; sourceTree = "<group>"; };
+		AB2FDAC228BE4F650008826F /* Summary_Bad_400_E003.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Summary_Bad_400_E003.json; sourceTree = "<group>"; };
+		AB2FDAC628BE50C70008826F /* Summary_Bad_400_E100.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Summary_Bad_400_E100.json; sourceTree = "<group>"; };
+		AB2FDAC828BE51990008826F /* Summary_Bad_400_E102.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Summary_Bad_400_E102.json; sourceTree = "<group>"; };
+		AB2FDACC28BE52170008826F /* Summary_Bad_500.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Summary_Bad_500.json; sourceTree = "<group>"; };
+		AB2FDACE28BE524E0008826F /* Summary_Bad_Unknown.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Summary_Bad_Unknown.json; sourceTree = "<group>"; };
 		ABB8B80128B8B0D600B7818F /* ThreeLinesSummary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreeLinesSummary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB8B80428B8B0D600B7818F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABB8B80628B8B0D600B7818F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +135,7 @@
 		AB2FDA9F28BE33860008826F /* ResponseData */ = {
 			isa = PBXGroup;
 			children = (
+				AB2FDABB28BE4AAC0008826F /* Summary */,
 				AB2FDAA028BE34D40008826F /* Translation */,
 			);
 			path = ResponseData;
@@ -132,7 +149,7 @@
 				AB2FDAA828BE44290008826F /* Translate_Bad_400_N2MT07.json */,
 				AB2FDAAC28BE44C00008826F /* Translate_Bad_400_N2MT08.json */,
 				AB2FDAB228BE45390008826F /* Translate_Bad_500_N2MT99.json */,
-				AB2FDAB628BE45840008826F /* Translate_Bad_500_Unknown.json */,
+				AB2FDAB628BE45840008826F /* Translate_Bad_Unknown.json */,
 			);
 			path = Translation;
 			sourceTree = "<group>";
@@ -143,6 +160,21 @@
 				AB2FDAB928BE45D50008826F /* Data.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AB2FDABB28BE4AAC0008826F /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				AB2FDABC28BE4BFC0008826F /* Summary_Good.json */,
+				AB2FDABE28BE4E220008826F /* Summary_Bad_400_E001.json */,
+				AB2FDAC028BE4ED10008826F /* Summary_Bad_400_E002.json */,
+				AB2FDAC228BE4F650008826F /* Summary_Bad_400_E003.json */,
+				AB2FDAC628BE50C70008826F /* Summary_Bad_400_E100.json */,
+				AB2FDAC828BE51990008826F /* Summary_Bad_400_E102.json */,
+				AB2FDACC28BE52170008826F /* Summary_Bad_500.json */,
+				AB2FDACE28BE524E0008826F /* Summary_Bad_Unknown.json */,
+			);
+			path = Summary;
 			sourceTree = "<group>";
 		};
 		ABB8B7F828B8B0D600B7818F = {
@@ -292,11 +324,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB2FDACD28BE52170008826F /* Summary_Bad_500.json in Resources */,
+				AB2FDABF28BE4E220008826F /* Summary_Bad_400_E001.json in Resources */,
+				AB2FDACF28BE524E0008826F /* Summary_Bad_Unknown.json in Resources */,
 				AB2FDAB328BE45390008826F /* Translate_Bad_500_N2MT99.json in Resources */,
 				AB2FDAA928BE44290008826F /* Translate_Bad_400_N2MT07.json in Resources */,
 				AB2FDAAD28BE44C00008826F /* Translate_Bad_400_N2MT08.json in Resources */,
 				AB2FDAA228BE428C0008826F /* Translate_Good.json in Resources */,
-				AB2FDAB728BE45840008826F /* Translate_Bad_500_Unknown.json in Resources */,
+				AB2FDAC928BE51990008826F /* Summary_Bad_400_E102.json in Resources */,
+				AB2FDAB728BE45840008826F /* Translate_Bad_Unknown.json in Resources */,
+				AB2FDAC328BE4F650008826F /* Summary_Bad_400_E003.json in Resources */,
+				AB2FDAC128BE4ED10008826F /* Summary_Bad_400_E002.json in Resources */,
+				AB2FDABD28BE4BFC0008826F /* Summary_Good.json in Resources */,
+				AB2FDAC728BE50C70008826F /* Summary_Bad_400_E100.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
