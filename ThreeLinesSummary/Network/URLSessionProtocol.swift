@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol URLSessionProtocol {
+protocol URLSessionProtocol: AnyObject {
     func data(for request: URLRequest) async throws -> (Data, URLResponse)
 }
 

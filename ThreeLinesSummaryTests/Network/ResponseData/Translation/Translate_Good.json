@@ -1,0 +1,10 @@
+{
+  "message": {
+    "@type": "response",
+    "@service": "naverservice.labs.api",
+    "@version": "1.0.0",
+    "result": {
+      "translatedText": "tea"
+    }
+  }
+}
