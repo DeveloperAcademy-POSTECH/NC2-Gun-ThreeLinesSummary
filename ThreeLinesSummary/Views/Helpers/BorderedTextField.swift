@@ -36,7 +36,7 @@ class BorderedTextField: UIView {
     }
     
     private func addBorder() {
-        self.layer.borderColor = UIColor.blue.cgColor
+        self.layer.borderColor = UIColor.systemBlue.cgColor
         self.layer.borderWidth = 1
         self.layer.cornerRadius = 20
         self.clipsToBounds = true
