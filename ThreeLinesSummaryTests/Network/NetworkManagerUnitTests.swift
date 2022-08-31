@@ -38,4 +38,21 @@ class NetworkManagerUnitTests: XCTestCase {
         
         wait(for: [expectation], timeout: 1)
     }
+    
+    func testTranslate_WhenStatusCodeIsAtLeast500_throwsServerError() {
+        let sut = NetworkManager(urlSession: FakeURLSession(statusCode: 500, fileName: "Translate_Bad_500_900"))
+        let expectation = expectation(description: "Task should be executed during test.")
+        
+        Task {
+            do {
+                let _ = try await sut.translate("")
+            } catch {
+                XCTAssertTrue(error is NetworkError)
+                XCTAssertEqual(error as! NetworkError, NetworkError.serverError)
+                expectation.fulfill()
+            }
+        }
+        
+        wait(for: [expectation], timeout: 1)
+    }
 }

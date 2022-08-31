@@ -18,6 +18,14 @@ struct NetworkManager {
             return responseBody.message.result.translatedText
         }
         
+        guard let response = response as? HTTPURLResponse else {
+            throw NetworkError.unknown
+        }
+        
+        if response.statusCode >= 500 {
+            throw NetworkError.serverError
+        }
+        
         return ""
     }
 }
