@@ -126,7 +126,7 @@ class NetworkManagerUnitTests: XCTestCase {
         
         let data = try! Data.fromJSON(fileName: "Summary_Good")
         let responseBody = try! JSONDecoder().decode(SummaryResponseBody.self, from: data)
-        let expectedText = responseBody.document.content
+        let expectedText = responseBody.summary
         
         Task {
             do {

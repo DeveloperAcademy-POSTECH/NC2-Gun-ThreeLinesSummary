@@ -20,7 +20,7 @@ struct NetworkManager {
             throw NetworkError.unknown
         }
         
-        guard let body = getBody(with: text) else {
+        guard let body = getTranslateRequestBody(with: text) else {
             throw NetworkError.unknown
         }
         
@@ -54,19 +54,27 @@ struct NetworkManager {
         }
     }
     
-    private func getBody(with text: String) -> Data? {
+    private func getTranslateRequestBody(with text: String) -> Data? {
         let body = TranslateRequestBody(text: text)
         
         return try? JSONEncoder().encode(body)
     }
     
     func summarize(_ text: String) async throws -> String {
-        let urlRequest = URLRequest(url: URL(string: "www.naver.com")!)
+        guard var urlRequest = SummaryAPIAuth.urlRequest else {
+            throw NetworkError.unknown
+        }
+        
+        guard let body = getSummaryRequestBody(with: text) else {
+            throw NetworkError.unknown
+        }
+        
+        urlRequest.httpBody = body
         
         let (data, response) = try await urlSession.data(for: urlRequest)
         
         if let responseBody = try? JSONDecoder().decode(SummaryResponseBody.self, from: data) {
-            return responseBody.document.content
+            return responseBody.summary
         }
         
         guard let response = response as? HTTPURLResponse else {
@@ -93,5 +101,11 @@ struct NetworkManager {
         default:
             throw NetworkError.unknown
         }
+    }
+    
+    private func getSummaryRequestBody(with text: String) -> Data? {
+        let body = SummaryRequestBody(content: text)
+        
+        return try? JSONEncoder().encode(body)
     }
 }

@@ -30,6 +30,8 @@
 		AB2FF4E728BF3C4D0050A03B /* TranslateRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FF4E628BF3C4D0050A03B /* TranslateRequestBody.swift */; };
 		AB2FF4E928BF54710050A03B /* Translate_Good.json in Resources */ = {isa = PBXBuildFile; fileRef = AB2FF4E828BF54710050A03B /* Translate_Good.json */; };
 		AB2FF4F028BF8EFA0050A03B /* SummaryResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FF4EF28BF8EFA0050A03B /* SummaryResponseBody.swift */; };
+		AB2FF4F228BF9A8D0050A03B /* SummaryRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FF4F128BF9A8D0050A03B /* SummaryRequestBody.swift */; };
+		AB2FF4F428BF9C250050A03B /* SummaryAPIAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FF4F328BF9C250050A03B /* SummaryAPIAuth.swift */; };
 		AB3AE7D228BF080300002CF8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AE7D128BF080300002CF8 /* NetworkError.swift */; };
 		AB3AE7D428BF0A6000002CF8 /* ErrorResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AE7D328BF0A6000002CF8 /* ErrorResponseBody.swift */; };
 		AB3AE7D628BF0C9400002CF8 /* Translate_Bad_NotDecodable.json in Resources */ = {isa = PBXBuildFile; fileRef = AB3AE7D528BF0C9400002CF8 /* Translate_Bad_NotDecodable.json */; };
@@ -85,6 +87,8 @@
 		AB2FF4E628BF3C4D0050A03B /* TranslateRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateRequestBody.swift; sourceTree = "<group>"; };
 		AB2FF4E828BF54710050A03B /* Translate_Good.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translate_Good.json; sourceTree = "<group>"; };
 		AB2FF4EF28BF8EFA0050A03B /* SummaryResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryResponseBody.swift; sourceTree = "<group>"; };
+		AB2FF4F128BF9A8D0050A03B /* SummaryRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryRequestBody.swift; sourceTree = "<group>"; };
+		AB2FF4F328BF9C250050A03B /* SummaryAPIAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryAPIAuth.swift; sourceTree = "<group>"; };
 		AB3AE7D128BF080300002CF8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		AB3AE7D328BF0A6000002CF8 /* ErrorResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponseBody.swift; sourceTree = "<group>"; };
 		AB3AE7D528BF0C9400002CF8 /* Translate_Bad_NotDecodable.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translate_Bad_NotDecodable.json; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				AB2FF4E228BF353F0050A03B /* TranslateAPIAuth.swift */,
+				AB2FF4F328BF9C250050A03B /* SummaryAPIAuth.swift */,
 			);
 			path = Secrets;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 				AB3AE7D328BF0A6000002CF8 /* ErrorResponseBody.swift */,
 				AB2FF4E628BF3C4D0050A03B /* TranslateRequestBody.swift */,
 				AB2FF4EF28BF8EFA0050A03B /* SummaryResponseBody.swift */,
+				AB2FF4F128BF9A8D0050A03B /* SummaryRequestBody.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -414,6 +420,7 @@
 			files = (
 				AB3AE7D228BF080300002CF8 /* NetworkError.swift in Sources */,
 				AB3AE7D428BF0A6000002CF8 /* ErrorResponseBody.swift in Sources */,
+				AB2FF4F228BF9A8D0050A03B /* SummaryRequestBody.swift in Sources */,
 				AB2FDA8E28BE308B0008826F /* URLSessionProtocol.swift in Sources */,
 				ABEC711428BC8A2000488104 /* PhaseTemplateView.swift in Sources */,
 				ABB8B80928B8B0D600B7818F /* ViewController.swift in Sources */,
@@ -422,6 +429,7 @@
 				ABEC710E28BC7F0300488104 /* UIImageView.swift in Sources */,
 				ABEC711028BC81D400488104 /* CustomButton.swift in Sources */,
 				AB2FDA8928BDD9E20008826F /* LoadingView.swift in Sources */,
+				AB2FF4F428BF9C250050A03B /* SummaryAPIAuth.swift in Sources */,
 				AB2FF4E728BF3C4D0050A03B /* TranslateRequestBody.swift in Sources */,
 				AB2FDA8328BDC96F0008826F /* TranslateView.swift in Sources */,
 				ABB8B80528B8B0D600B7818F /* AppDelegate.swift in Sources */,
