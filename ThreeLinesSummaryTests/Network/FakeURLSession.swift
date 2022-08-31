@@ -18,6 +18,6 @@ class FakeURLSession: URLSessionProtocol {
     }
     
     func data(for request: URLRequest) async throws -> (Data, URLResponse) {
-        return (data, HTTPURLResponse(url: URL(string: "")!, statusCode: statusCode, httpVersion: nil, headerFields: nil)!)
+        return (data, HTTPURLResponse(url: URL(string: "www.naver.com")!, statusCode: statusCode, httpVersion: nil, headerFields: nil)!)
     }
 }
