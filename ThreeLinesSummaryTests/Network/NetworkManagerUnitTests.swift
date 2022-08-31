@@ -30,7 +30,7 @@ class NetworkManagerUnitTests: XCTestCase {
         Task {
             do {
                 // when
-                let _ = try await sut.translate("")
+                let _ = try await sut.translate("dummy text")
             } catch {
                 // then
                 XCTAssertTrue(error is NetworkError)
@@ -52,7 +52,7 @@ class NetworkManagerUnitTests: XCTestCase {
         
         Task {
             // when
-            let text = try! await sut.translate("")
+            let text = try! await sut.translate("dummy Text")
             
             // then
             XCTAssertEqual(text, expectedText)
@@ -78,12 +78,6 @@ class NetworkManagerUnitTests: XCTestCase {
         givenSutAndExpectation(statusCode: 413, fileName: "Translate_Bad_413_430")
         
         whenThrowsNetworkError(expectedError: .longText)
-    }
-    
-    func testTranslate_WhenErrorCodeIsN2MT07_throwsEmptyText() {
-        givenSutAndExpectation(statusCode: 400, fileName: "Translate_Bad_400_N2MT07")
-        
-        whenThrowsNetworkError(expectedError: .emptyText)
     }
     
     func testTranslate_WhenErrorCodeIsN2MT08_throwsLongText() {

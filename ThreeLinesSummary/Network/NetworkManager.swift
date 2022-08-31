@@ -12,6 +12,10 @@ struct NetworkManager {
     let translationURL = URL(string: "www.naver.com")!
     
     func translate(_ text: String) async throws -> String {
+        if text.isEmpty {
+            throw NetworkError.emptyText
+        }
+        
         guard var urlRequest = TranslateAPIAuth.urlRequest else {
             throw NetworkError.unknown
         }
