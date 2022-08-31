@@ -38,18 +38,4 @@ class NetworkManagerIntegrationTests: XCTestCase {
         
         wait(for: [expectation], timeout: 3)
     }
-    
-    func testTranslate_whenTextIsEmpty_throwsEmptyText() {
-        Task {
-            do {
-                let _ = try await sut.translate("")
-            } catch {
-                XCTAssertTrue(error is NetworkError)
-                XCTAssertEqual(error as? NetworkError, NetworkError.emptyText)
-                expectation.fulfill()
-            }
-        }
-        
-        wait(for: [expectation], timeout: 3)
-    }
 }

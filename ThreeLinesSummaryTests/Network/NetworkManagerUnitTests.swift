@@ -42,6 +42,22 @@ class NetworkManagerUnitTests: XCTestCase {
         
         wait(for: [expectation], timeout: 1)
     }
+    
+    func testTranslate_whenTextIsEmpty_throwsEmptyText() {
+        givenSutAndExpectation(statusCode: 200, fileName: "Translate_Good")
+        
+        Task {
+            do {
+                let _ = try await sut.translate("")
+            } catch {
+                XCTAssertTrue(error is NetworkError)
+                XCTAssertEqual(error as? NetworkError, NetworkError.emptyText)
+                expectation.fulfill()
+            }
+        }
+        
+        wait(for: [expectation], timeout: 3)
+    }
 
     func testTranslate_WhenResponseIsGood_returnsText() {
         // given
