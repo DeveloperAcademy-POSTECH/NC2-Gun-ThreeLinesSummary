@@ -28,6 +28,8 @@
 		AB2FDACD28BE52170008826F /* Summary_Bad_500.json in Resources */ = {isa = PBXBuildFile; fileRef = AB2FDACC28BE52170008826F /* Summary_Bad_500.json */; };
 		AB2FDACF28BE524E0008826F /* Summary_Bad_Unknown.json in Resources */ = {isa = PBXBuildFile; fileRef = AB2FDACE28BE524E0008826F /* Summary_Bad_Unknown.json */; };
 		AB3AE7D228BF080300002CF8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AE7D128BF080300002CF8 /* NetworkError.swift */; };
+		AB3AE7D428BF0A6000002CF8 /* ErrorResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AE7D328BF0A6000002CF8 /* ErrorResponseBody.swift */; };
+		AB3AE7D628BF0C9400002CF8 /* Translate_Bad_NotDecodable.json in Resources */ = {isa = PBXBuildFile; fileRef = AB3AE7D528BF0C9400002CF8 /* Translate_Bad_NotDecodable.json */; };
 		AB3EF2B828BE66B1006B5327 /* TranslateResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3EF2B728BE66B1006B5327 /* TranslateResponseBody.swift */; };
 		AB3EF2BC28BE67D9006B5327 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3EF2BB28BE67D9006B5327 /* NetworkManager.swift */; };
 		AB3EF2BE28BE83D6006B5327 /* NetworkManagerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3EF2BD28BE83D6006B5327 /* NetworkManagerUnitTests.swift */; };
@@ -78,6 +80,8 @@
 		AB2FDACC28BE52170008826F /* Summary_Bad_500.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Summary_Bad_500.json; sourceTree = "<group>"; };
 		AB2FDACE28BE524E0008826F /* Summary_Bad_Unknown.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Summary_Bad_Unknown.json; sourceTree = "<group>"; };
 		AB3AE7D128BF080300002CF8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		AB3AE7D328BF0A6000002CF8 /* ErrorResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponseBody.swift; sourceTree = "<group>"; };
+		AB3AE7D528BF0C9400002CF8 /* Translate_Bad_NotDecodable.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translate_Bad_NotDecodable.json; sourceTree = "<group>"; };
 		AB3EF2B728BE66B1006B5327 /* TranslateResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateResponseBody.swift; sourceTree = "<group>"; };
 		AB3EF2BB28BE67D9006B5327 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		AB3EF2BD28BE83D6006B5327 /* NetworkManagerUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerUnitTests.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 				AB2FDAAC28BE44C00008826F /* Translate_Bad_400_N2MT08.json */,
 				AB2FDAB228BE45390008826F /* Translate_Bad_500_N2MT99.json */,
 				AB2FDAB628BE45840008826F /* Translate_Bad_500_900.json */,
+				AB3AE7D528BF0C9400002CF8 /* Translate_Bad_NotDecodable.json */,
 			);
 			path = Translation;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 			children = (
 				AB3EF2B728BE66B1006B5327 /* TranslateResponseBody.swift */,
 				AB3AE7D128BF080300002CF8 /* NetworkError.swift */,
+				AB3AE7D328BF0A6000002CF8 /* ErrorResponseBody.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -352,6 +358,7 @@
 				AB2FDAAD28BE44C00008826F /* Translate_Bad_400_N2MT08.json in Resources */,
 				AB2FDAA228BE428C0008826F /* Translate_Good.json in Resources */,
 				AB2FDAC928BE51990008826F /* Summary_Bad_400_E102.json in Resources */,
+				AB3AE7D628BF0C9400002CF8 /* Translate_Bad_NotDecodable.json in Resources */,
 				AB2FDAB728BE45840008826F /* Translate_Bad_500_900.json in Resources */,
 				AB2FDAC328BE4F650008826F /* Summary_Bad_400_E003.json in Resources */,
 				AB2FDAC128BE4ED10008826F /* Summary_Bad_400_E002.json in Resources */,
@@ -387,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB3AE7D228BF080300002CF8 /* NetworkError.swift in Sources */,
+				AB3AE7D428BF0A6000002CF8 /* ErrorResponseBody.swift in Sources */,
 				AB2FDA8E28BE308B0008826F /* URLSessionProtocol.swift in Sources */,
 				ABEC711428BC8A2000488104 /* PhaseTemplateView.swift in Sources */,
 				ABB8B80928B8B0D600B7818F /* ViewController.swift in Sources */,

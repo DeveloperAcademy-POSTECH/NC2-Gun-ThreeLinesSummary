@@ -55,4 +55,21 @@ class NetworkManagerUnitTests: XCTestCase {
         
         wait(for: [expectation], timeout: 1)
     }
+    
+    func testTranslate_WhenNotDecodableResponseBody_throwsUnknown() {
+        let sut = NetworkManager(urlSession: FakeURLSession(statusCode: 400, fileName: "Translate_Bad_NotDecodable"))
+        let expectation = expectation(description: "Task should be executed during test.")
+        
+        Task {
+            do {
+                let _ = try await sut.translate("")
+            } catch {
+                XCTAssertTrue(error is NetworkError)
+                XCTAssertEqual(error as! NetworkError, NetworkError.unknown)
+                expectation.fulfill()
+            }
+        }
+        
+        wait(for: [expectation], timeout: 1)
+    }
 }
