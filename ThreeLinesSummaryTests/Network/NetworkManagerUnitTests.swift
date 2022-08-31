@@ -102,4 +102,25 @@ class NetworkManagerUnitTests: XCTestCase {
         
         whenThrowsNetworkError(expectedError: .longText)
     }
+    
+    func testSummarize_whenResponseIsGood_returnsText() {
+        givenSutAndExpectation(statusCode: 200, fileName: "Summary_Good")
+        
+        let data = try! Data.fromJSON(fileName: "Summary_Good")
+        let responseBody = try! JSONDecoder().decode(SummaryResponseBody.self, from: data)
+        let expectedText = responseBody.document.content
+        
+        Task {
+            do {
+                // when
+                let text = try await sut.summarize("dummy Text")
+                
+                // then
+                XCTAssertEqual(text, expectedText)
+                expectation.fulfill()
+            } catch {}
+        }
+        
+        wait(for: [expectation], timeout: 1)
+    }
 }

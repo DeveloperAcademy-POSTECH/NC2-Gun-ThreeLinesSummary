@@ -29,6 +29,7 @@
 		AB2FF4E528BF37600050A03B /* NetworkManagerIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FF4E428BF37600050A03B /* NetworkManagerIntegrationTests.swift */; };
 		AB2FF4E728BF3C4D0050A03B /* TranslateRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FF4E628BF3C4D0050A03B /* TranslateRequestBody.swift */; };
 		AB2FF4E928BF54710050A03B /* Translate_Good.json in Resources */ = {isa = PBXBuildFile; fileRef = AB2FF4E828BF54710050A03B /* Translate_Good.json */; };
+		AB2FF4F028BF8EFA0050A03B /* SummaryResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FF4EF28BF8EFA0050A03B /* SummaryResponseBody.swift */; };
 		AB3AE7D228BF080300002CF8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AE7D128BF080300002CF8 /* NetworkError.swift */; };
 		AB3AE7D428BF0A6000002CF8 /* ErrorResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AE7D328BF0A6000002CF8 /* ErrorResponseBody.swift */; };
 		AB3AE7D628BF0C9400002CF8 /* Translate_Bad_NotDecodable.json in Resources */ = {isa = PBXBuildFile; fileRef = AB3AE7D528BF0C9400002CF8 /* Translate_Bad_NotDecodable.json */; };
@@ -83,6 +84,7 @@
 		AB2FF4E428BF37600050A03B /* NetworkManagerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerIntegrationTests.swift; sourceTree = "<group>"; };
 		AB2FF4E628BF3C4D0050A03B /* TranslateRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateRequestBody.swift; sourceTree = "<group>"; };
 		AB2FF4E828BF54710050A03B /* Translate_Good.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translate_Good.json; sourceTree = "<group>"; };
+		AB2FF4EF28BF8EFA0050A03B /* SummaryResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryResponseBody.swift; sourceTree = "<group>"; };
 		AB3AE7D128BF080300002CF8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		AB3AE7D328BF0A6000002CF8 /* ErrorResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponseBody.swift; sourceTree = "<group>"; };
 		AB3AE7D528BF0C9400002CF8 /* Translate_Bad_NotDecodable.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translate_Bad_NotDecodable.json; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				AB3AE7D128BF080300002CF8 /* NetworkError.swift */,
 				AB3AE7D328BF0A6000002CF8 /* ErrorResponseBody.swift */,
 				AB2FF4E628BF3C4D0050A03B /* TranslateRequestBody.swift */,
+				AB2FF4EF28BF8EFA0050A03B /* SummaryResponseBody.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				AB2FDA8328BDC96F0008826F /* TranslateView.swift in Sources */,
 				ABB8B80528B8B0D600B7818F /* AppDelegate.swift in Sources */,
 				ABEC710B28BC75F900488104 /* BorderedTextField.swift in Sources */,
+				AB2FF4F028BF8EFA0050A03B /* SummaryResponseBody.swift in Sources */,
 				ABB8B80728B8B0D600B7818F /* SceneDelegate.swift in Sources */,
 				ABEC711828BCA9C900488104 /* UIButton.swift in Sources */,
 				AB2FF4E328BF353F0050A03B /* TranslateAPIAuth.swift in Sources */,

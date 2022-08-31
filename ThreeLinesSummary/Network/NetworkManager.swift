@@ -59,4 +59,16 @@ struct NetworkManager {
         
         return try? JSONEncoder().encode(body)
     }
+    
+    func summarize(_ text: String) async throws -> String {
+        let urlRequest = URLRequest(url: URL(string: "www.naver.com")!)
+        
+        let (data, response) = try await urlSession.data(for: urlRequest)
+        
+        if let responseBody = try? JSONDecoder().decode(SummaryResponseBody.self, from: data) {
+            return responseBody.document.content
+        }
+        
+        throw NetworkError.unknown
+    }
 }
