@@ -56,4 +56,18 @@ class NetworkManagerIntegrationTests: XCTestCase {
         
         wait(for: [expectation], timeout: 3)
     }
+    
+    func testSummarize_whenTextIsEmpty_throwsEmptyText() {
+        Task {
+            do {
+                let _ = try await sut.summarize("")
+            } catch {
+                XCTAssertTrue(error is NetworkError)
+                XCTAssertEqual(error as? NetworkError, NetworkError.emptyText)
+                expectation.fulfill()
+            }
+        }
+        
+        wait(for: [expectation], timeout: 3)
+    }
 }
