@@ -8,9 +8,5 @@
 import Foundation
 
 struct SummaryResponseBody: Decodable {
-    let document: Document
-    
-    struct Document: Decodable {
-        let content: String
-    }
+    let summary: String
 }
