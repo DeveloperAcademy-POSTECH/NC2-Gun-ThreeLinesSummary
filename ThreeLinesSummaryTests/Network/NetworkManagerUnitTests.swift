@@ -79,4 +79,16 @@ class NetworkManagerUnitTests: XCTestCase {
         
         whenThrowsNetworkError(expectedError: .longText)
     }
+    
+    func testTranslate_WhenErrorCodeIsN2MT07_throwsEmptyText() {
+        givenSutAndExpectation(statusCode: 400, fileName: "Translate_Bad_400_N2MT07")
+        
+        whenThrowsNetworkError(expectedError: .emptyText)
+    }
+    
+    func testTranslate_WhenErrorCodeIsN2MT08_throwsLongText() {
+        givenSutAndExpectation(statusCode: 400, fileName: "Translate_Bad_400_N2MT08")
+        
+        whenThrowsNetworkError(expectedError: .longText)
+    }
 }

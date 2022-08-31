@@ -31,8 +31,10 @@ struct NetworkManager {
         }
         
         switch errorResponseBody.error.errorCode {
-        case "430":
+        case "430", "N2MT08":
             throw NetworkError.longText
+        case "N2MT07":
+            throw NetworkError.emptyText
         default:
             throw NetworkError.unknown
         }
