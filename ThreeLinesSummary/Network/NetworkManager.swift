@@ -30,8 +30,11 @@ struct NetworkManager {
             throw NetworkError.unknown
         }
         
-        
-        
-        return ""
+        switch errorResponseBody.error.errorCode {
+        case "430":
+            throw NetworkError.longText
+        default:
+            throw NetworkError.unknown
+        }
     }
 }

@@ -30,6 +30,7 @@
 		AB3AE7D228BF080300002CF8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AE7D128BF080300002CF8 /* NetworkError.swift */; };
 		AB3AE7D428BF0A6000002CF8 /* ErrorResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3AE7D328BF0A6000002CF8 /* ErrorResponseBody.swift */; };
 		AB3AE7D628BF0C9400002CF8 /* Translate_Bad_NotDecodable.json in Resources */ = {isa = PBXBuildFile; fileRef = AB3AE7D528BF0C9400002CF8 /* Translate_Bad_NotDecodable.json */; };
+		AB3AE7D828BF14C600002CF8 /* Translate_Bad_413_430.json in Resources */ = {isa = PBXBuildFile; fileRef = AB3AE7D728BF14C600002CF8 /* Translate_Bad_413_430.json */; };
 		AB3EF2B828BE66B1006B5327 /* TranslateResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3EF2B728BE66B1006B5327 /* TranslateResponseBody.swift */; };
 		AB3EF2BC28BE67D9006B5327 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3EF2BB28BE67D9006B5327 /* NetworkManager.swift */; };
 		AB3EF2BE28BE83D6006B5327 /* NetworkManagerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3EF2BD28BE83D6006B5327 /* NetworkManagerUnitTests.swift */; };
@@ -65,7 +66,6 @@
 		AB2FDA9328BE31510008826F /* ThreeLinesSummaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreeLinesSummaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2FDA9D28BE329E0008826F /* FakeURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeURLSession.swift; sourceTree = "<group>"; };
 		AB2FDAA128BE428C0008826F /* Translate_Good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Translate_Good.json; sourceTree = "<group>"; };
-		AB2FDAA528BE439F0008826F /* Translate_Bad_413_430.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translate_Bad_413_430.json; sourceTree = "<group>"; };
 		AB2FDAA828BE44290008826F /* Translate_Bad_400_N2MT07.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translate_Bad_400_N2MT07.json; sourceTree = "<group>"; };
 		AB2FDAAC28BE44C00008826F /* Translate_Bad_400_N2MT08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translate_Bad_400_N2MT08.json; sourceTree = "<group>"; };
 		AB2FDAB228BE45390008826F /* Translate_Bad_500_N2MT99.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translate_Bad_500_N2MT99.json; sourceTree = "<group>"; };
@@ -82,6 +82,7 @@
 		AB3AE7D128BF080300002CF8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		AB3AE7D328BF0A6000002CF8 /* ErrorResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponseBody.swift; sourceTree = "<group>"; };
 		AB3AE7D528BF0C9400002CF8 /* Translate_Bad_NotDecodable.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translate_Bad_NotDecodable.json; sourceTree = "<group>"; };
+		AB3AE7D728BF14C600002CF8 /* Translate_Bad_413_430.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translate_Bad_413_430.json; sourceTree = "<group>"; };
 		AB3EF2B728BE66B1006B5327 /* TranslateResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateResponseBody.swift; sourceTree = "<group>"; };
 		AB3EF2BB28BE67D9006B5327 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		AB3EF2BD28BE83D6006B5327 /* NetworkManagerUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerUnitTests.swift; sourceTree = "<group>"; };
@@ -159,7 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				AB2FDAA128BE428C0008826F /* Translate_Good.json */,
-				AB2FDAA528BE439F0008826F /* Translate_Bad_413_430.json */,
+				AB3AE7D728BF14C600002CF8 /* Translate_Bad_413_430.json */,
 				AB2FDAA828BE44290008826F /* Translate_Bad_400_N2MT07.json */,
 				AB2FDAAC28BE44C00008826F /* Translate_Bad_400_N2MT08.json */,
 				AB2FDAB228BE45390008826F /* Translate_Bad_500_N2MT99.json */,
@@ -355,6 +356,7 @@
 				AB2FDACF28BE524E0008826F /* Summary_Bad_Unknown.json in Resources */,
 				AB2FDAB328BE45390008826F /* Translate_Bad_500_N2MT99.json in Resources */,
 				AB2FDAA928BE44290008826F /* Translate_Bad_400_N2MT07.json in Resources */,
+				AB3AE7D828BF14C600002CF8 /* Translate_Bad_413_430.json in Resources */,
 				AB2FDAAD28BE44C00008826F /* Translate_Bad_400_N2MT08.json in Resources */,
 				AB2FDAA228BE428C0008826F /* Translate_Good.json in Resources */,
 				AB2FDAC928BE51990008826F /* Summary_Bad_400_E102.json in Resources */,

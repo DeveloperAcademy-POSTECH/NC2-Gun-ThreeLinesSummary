@@ -73,4 +73,10 @@ class NetworkManagerUnitTests: XCTestCase {
         
         whenThrowsNetworkError(expectedError: .unknown)
     }
+    
+    func testTranslate_WhenErrorCodeIs430_throwsLongText() {
+        givenSutAndExpectation(statusCode: 413, fileName: "Translate_Bad_413_430")
+        
+        whenThrowsNetworkError(expectedError: .longText)
+    }
 }
