@@ -12,4 +12,6 @@ enum NetworkError: Error {
     case unknown
     case longText
     case emptyText
+    case encoding
+    case invalidText
 }

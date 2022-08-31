@@ -27,11 +27,27 @@ class NetworkManagerUnitTests: XCTestCase {
         expectation = expectation(description: "Task should be executed during test.")
     }
     
-    func whenThrowsNetworkError(expectedError: NetworkError) {
+    func whenTranslateThrowsNetworkError(expectedError: NetworkError) {
         Task {
             do {
                 // when
                 let _ = try await sut.translate("dummy text")
+            } catch {
+                // then
+                XCTAssertTrue(error is NetworkError)
+                XCTAssertEqual(error as! NetworkError, expectedError)
+                expectation.fulfill()
+            }
+        }
+        
+        wait(for: [expectation], timeout: 1)
+    }
+    
+    func whenSummarizeThrowsNetworkError(expectedError: NetworkError) {
+        Task {
+            do {
+                // when
+                let _ = try await sut.summarize("dummy text")
             } catch {
                 // then
                 XCTAssertTrue(error is NetworkError)
@@ -68,12 +84,14 @@ class NetworkManagerUnitTests: XCTestCase {
         let expectedText = responseBody.message.result.translatedText
         
         Task {
-            // when
-            let text = try! await sut.translate("dummy Text")
-            
-            // then
-            XCTAssertEqual(text, expectedText)
-            expectation.fulfill()
+            do {
+                // when
+                let text = try await sut.translate("dummy Text")
+                
+                // then
+                XCTAssertEqual(text, expectedText)
+                expectation.fulfill()
+            } catch {}
         }
         
         wait(for: [expectation], timeout: 1)
@@ -82,24 +100,75 @@ class NetworkManagerUnitTests: XCTestCase {
     func testTranslate_WhenStatusCodeIsAtLeast500_throwsServerError() {
         givenSutAndExpectation(statusCode: 500, fileName: "Translate_Bad_500_900")
         
-        whenThrowsNetworkError(expectedError: .serverError)
+        whenTranslateThrowsNetworkError(expectedError: .serverError)
     }
     
     func testTranslate_WhenNotDecodableResponseBody_throwsUnknown() {
         givenSutAndExpectation(statusCode: 400, fileName: "Translate_Bad_NotDecodable")
         
-        whenThrowsNetworkError(expectedError: .unknown)
+        whenTranslateThrowsNetworkError(expectedError: .unknown)
     }
     
     func testTranslate_WhenErrorCodeIs430_throwsLongText() {
         givenSutAndExpectation(statusCode: 413, fileName: "Translate_Bad_413_430")
         
-        whenThrowsNetworkError(expectedError: .longText)
+        whenTranslateThrowsNetworkError(expectedError: .longText)
     }
     
     func testTranslate_WhenErrorCodeIsN2MT08_throwsLongText() {
         givenSutAndExpectation(statusCode: 400, fileName: "Translate_Bad_400_N2MT08")
         
-        whenThrowsNetworkError(expectedError: .longText)
+        whenTranslateThrowsNetworkError(expectedError: .longText)
+    }
+    
+    func testSummarize_whenResponseIsGood_returnsText() {
+        givenSutAndExpectation(statusCode: 200, fileName: "Summary_Good")
+        
+        let data = try! Data.fromJSON(fileName: "Summary_Good")
+        let responseBody = try! JSONDecoder().decode(SummaryResponseBody.self, from: data)
+        let expectedText = responseBody.summary
+        
+        Task {
+            do {
+                // when
+                let text = try await sut.summarize("dummy Text")
+                
+                // then
+                XCTAssertEqual(text, expectedText)
+                expectation.fulfill()
+            } catch {}
+        }
+        
+        wait(for: [expectation], timeout: 1)
+    }
+    
+    func testSummarize_whenStatusCodeIsAtLeast500_throwsServerError() {
+        givenSutAndExpectation(statusCode: 500, fileName: "Summary_Bad_500")
+        
+        whenSummarizeThrowsNetworkError(expectedError: .serverError)
+    }
+    
+    func testSummarize_whenErrorCodeIsE001_throwsEmptyText() {
+        givenSutAndExpectation(statusCode: 400, fileName: "Summary_Bad_400_E001")
+        
+        whenSummarizeThrowsNetworkError(expectedError: .emptyText)
+    }
+    
+    func testSummarize_whenErrorCodeIsE002_throwsEncoding() {
+        givenSutAndExpectation(statusCode: 400, fileName: "Summary_Bad_400_E002")
+        
+        whenSummarizeThrowsNetworkError(expectedError: .encoding)
+    }
+    
+    func testSummarize_whenErrorCodeIsE003_throwsLongText() {
+        givenSutAndExpectation(statusCode: 400, fileName: "Summary_Bad_400_E003")
+        
+        whenSummarizeThrowsNetworkError(expectedError: .longText)
+    }
+    
+    func testSummarize_whenErrorCodeIsE100_throwsInvalidText() {
+        givenSutAndExpectation(statusCode: 400, fileName: "Summary_Bad_400_E100")
+        
+        whenSummarizeThrowsNetworkError(expectedError: .invalidText)
     }
 }
