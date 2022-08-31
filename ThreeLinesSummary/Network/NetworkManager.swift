@@ -69,6 +69,14 @@ struct NetworkManager {
             return responseBody.document.content
         }
         
+        guard let response = response as? HTTPURLResponse else {
+            throw NetworkError.unknown
+        }
+        
+        if response.statusCode >= 500 {
+            throw NetworkError.serverError
+        }
+        
         throw NetworkError.unknown
     }
 }

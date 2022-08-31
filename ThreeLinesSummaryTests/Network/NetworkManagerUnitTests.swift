@@ -27,11 +27,27 @@ class NetworkManagerUnitTests: XCTestCase {
         expectation = expectation(description: "Task should be executed during test.")
     }
     
-    func whenThrowsNetworkError(expectedError: NetworkError) {
+    func whenTranslateThrowsNetworkError(expectedError: NetworkError) {
         Task {
             do {
                 // when
                 let _ = try await sut.translate("dummy text")
+            } catch {
+                // then
+                XCTAssertTrue(error is NetworkError)
+                XCTAssertEqual(error as! NetworkError, expectedError)
+                expectation.fulfill()
+            }
+        }
+        
+        wait(for: [expectation], timeout: 1)
+    }
+    
+    func whenSummarizeThrowsNetworkError(expectedError: NetworkError) {
+        Task {
+            do {
+                // when
+                let _ = try await sut.summarize("dummy text")
             } catch {
                 // then
                 XCTAssertTrue(error is NetworkError)
@@ -82,25 +98,25 @@ class NetworkManagerUnitTests: XCTestCase {
     func testTranslate_WhenStatusCodeIsAtLeast500_throwsServerError() {
         givenSutAndExpectation(statusCode: 500, fileName: "Translate_Bad_500_900")
         
-        whenThrowsNetworkError(expectedError: .serverError)
+        whenTranslateThrowsNetworkError(expectedError: .serverError)
     }
     
     func testTranslate_WhenNotDecodableResponseBody_throwsUnknown() {
         givenSutAndExpectation(statusCode: 400, fileName: "Translate_Bad_NotDecodable")
         
-        whenThrowsNetworkError(expectedError: .unknown)
+        whenTranslateThrowsNetworkError(expectedError: .unknown)
     }
     
     func testTranslate_WhenErrorCodeIs430_throwsLongText() {
         givenSutAndExpectation(statusCode: 413, fileName: "Translate_Bad_413_430")
         
-        whenThrowsNetworkError(expectedError: .longText)
+        whenTranslateThrowsNetworkError(expectedError: .longText)
     }
     
     func testTranslate_WhenErrorCodeIsN2MT08_throwsLongText() {
         givenSutAndExpectation(statusCode: 400, fileName: "Translate_Bad_400_N2MT08")
         
-        whenThrowsNetworkError(expectedError: .longText)
+        whenTranslateThrowsNetworkError(expectedError: .longText)
     }
     
     func testSummarize_whenResponseIsGood_returnsText() {
@@ -122,5 +138,11 @@ class NetworkManagerUnitTests: XCTestCase {
         }
         
         wait(for: [expectation], timeout: 1)
+    }
+    
+    func testSummarize_whenStatusCodeIsAtLeast500_throwsServerError() {
+        givenSutAndExpectation(statusCode: 500, fileName: "Summary_Bad_500")
+        
+        whenSummarizeThrowsNetworkError(expectedError: .serverError)
     }
 }
