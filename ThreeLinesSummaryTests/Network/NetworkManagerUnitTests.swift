@@ -165,4 +165,10 @@ class NetworkManagerUnitTests: XCTestCase {
         
         whenSummarizeThrowsNetworkError(expectedError: .longText)
     }
+    
+    func testSummarize_whenErrorCodeIsE100_throwsInvalidText() {
+        givenSutAndExpectation(statusCode: 400, fileName: "Summary_Bad_400_E100")
+        
+        whenSummarizeThrowsNetworkError(expectedError: .invalidText)
+    }
 }
