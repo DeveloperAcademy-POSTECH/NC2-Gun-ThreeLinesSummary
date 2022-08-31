@@ -77,6 +77,15 @@ struct NetworkManager {
             throw NetworkError.serverError
         }
         
-        throw NetworkError.unknown
+        guard let errorResponseBody = try? JSONDecoder().decode(ErrorResponseBody.self, from: data) else {
+            throw NetworkError.unknown
+        }
+        
+        switch errorResponseBody.error.errorCode {
+        case "E001":
+            throw NetworkError.emptyText
+        default:
+            throw NetworkError.unknown
+        }
     }
 }

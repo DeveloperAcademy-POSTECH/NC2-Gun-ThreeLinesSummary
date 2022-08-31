@@ -84,12 +84,14 @@ class NetworkManagerUnitTests: XCTestCase {
         let expectedText = responseBody.message.result.translatedText
         
         Task {
-            // when
-            let text = try! await sut.translate("dummy Text")
-            
-            // then
-            XCTAssertEqual(text, expectedText)
-            expectation.fulfill()
+            do {
+                // when
+                let text = try await sut.translate("dummy Text")
+                
+                // then
+                XCTAssertEqual(text, expectedText)
+                expectation.fulfill()
+            } catch {}
         }
         
         wait(for: [expectation], timeout: 1)
@@ -144,5 +146,11 @@ class NetworkManagerUnitTests: XCTestCase {
         givenSutAndExpectation(statusCode: 500, fileName: "Summary_Bad_500")
         
         whenSummarizeThrowsNetworkError(expectedError: .serverError)
+    }
+    
+    func testSummarize_whenErrorCodeIsE001_throwsEmptyText() {
+        givenSutAndExpectation(statusCode: 400, fileName: "Summary_Bad_400_E001")
+        
+        whenSummarizeThrowsNetworkError(expectedError: .emptyText)
     }
 }
