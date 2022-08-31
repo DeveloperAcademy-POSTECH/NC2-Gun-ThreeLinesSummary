@@ -12,7 +12,17 @@ struct NetworkManager {
     let translationURL = URL(string: "www.naver.com")!
     
     func translate(_ text: String) async throws -> String {
-        let (data, response) = try await urlSession.data(for: URLRequest(url: translationURL))
+        guard var urlRequest = TranslateAPIAuth.urlRequest else {
+            throw NetworkError.unknown
+        }
+        
+        guard let body = getBody(with: text) else {
+            throw NetworkError.unknown
+        }
+        
+        urlRequest.httpBody = body
+        
+        let (data, response) = try await urlSession.data(for: urlRequest)
         
         if let responseBody = try? JSONDecoder().decode(TranslateResponseBody.self, from: data) {
             return responseBody.message.result.translatedText
@@ -38,5 +48,11 @@ struct NetworkManager {
         default:
             throw NetworkError.unknown
         }
+    }
+    
+    private func getBody(with text: String) -> Data? {
+        let body = TranslateRequestBody(text: text)
+        
+        return try? JSONEncoder().encode(body)
     }
 }
