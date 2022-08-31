@@ -84,6 +84,8 @@ struct NetworkManager {
         switch errorResponseBody.error.errorCode {
         case "E001":
             throw NetworkError.emptyText
+        case "E002":
+            throw NetworkError.encoding
         default:
             throw NetworkError.unknown
         }
