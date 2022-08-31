@@ -159,4 +159,10 @@ class NetworkManagerUnitTests: XCTestCase {
         
         whenSummarizeThrowsNetworkError(expectedError: .encoding)
     }
+    
+    func testSummarize_whenErrorCodeIsE003_throwsLongText() {
+        givenSutAndExpectation(statusCode: 400, fileName: "Summary_Bad_400_E003")
+        
+        whenSummarizeThrowsNetworkError(expectedError: .longText)
+    }
 }

@@ -86,6 +86,8 @@ struct NetworkManager {
             throw NetworkError.emptyText
         case "E002":
             throw NetworkError.encoding
+        case "E003":
+            throw NetworkError.longText
         default:
             throw NetworkError.unknown
         }
