@@ -9,19 +9,22 @@ import XCTest
 @testable import ThreeLinesSummary
 
 class NetworkManagerIntegrationTests: XCTestCase {
+    var sut: NetworkManager!
+    var expectation: XCTestExpectation!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        try super.setUpWithError()
+        sut = NetworkManager(urlSession: URLSession.shared)
+        expectation = expectation(description: "Task should be executed during test.")
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+        expectation = nil
+        try super.tearDownWithError()
     }
 
     func testTranslate() {
-        let sut = NetworkManager(urlSession: URLSession.shared)
-        let expectation = expectation(description: "Task should be executed during test.")
-        
         Task {
             do {
                 let text = try await sut.translate("I believe I can fly.")
@@ -37,9 +40,6 @@ class NetworkManagerIntegrationTests: XCTestCase {
     }
     
     func testTranslate_whenTextIsEmpty_throwsEmptyText() {
-        let sut = NetworkManager(urlSession: URLSession.shared)
-        let expectation = expectation(description: "Task should be executed during test.")
-        
         Task {
             do {
                 let _ = try await sut.translate("")
