@@ -62,6 +62,23 @@ class ViewModel: ObservableObject {
         }
     }
     
+    func summarize(_ text: String) {
+        currentPhase = .summarizing
+        loadingMessage = "요약 중..."
+        
+        Task {
+            do {
+                let result = try await networkManager.summarize(text)
+                currentPhase = .finishedSummarize
+                summaryResult = result
+            } catch {
+                self.currentPhase = .failedSummarize
+                let errorMessage = ((error as? NetworkError) ?? .unknown).message
+                self.errorMessage = errorMessage
+            }
+        }
+    }
+    
     func goBack() {
         switch currentPhase {
         case .failedTranslate, .finishedTranslate:

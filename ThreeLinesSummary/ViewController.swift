@@ -77,6 +77,8 @@ class ViewController: UIViewController {
             .store(in: &subscriptions)
         
         pasteView.translateButton.addTarget(self, action: #selector(translateButtonClicked), for: .touchUpInside)
+        translateView.summarizeButton.addTarget(self, action: #selector(summarize), for: .touchUpInside)
+        
         translateView.goBackButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         errorView.goBackButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
     }
@@ -87,6 +89,10 @@ class ViewController: UIViewController {
     
     @objc private func goBack() {
         viewModel.goBack()
+    }
+    
+    @objc private func summarize() {
+        viewModel.summarize(translateView.textField.text)
     }
 }
 

@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 class TranslateView: PhaseTemplateView {
-    let translateButton = UIButton.getSystemButton(title: "예", configuration: .filled())
+    let summarizeButton = UIButton.getSystemButton(title: "예", configuration: .filled())
     let goBackButton = UIButton.getSystemButton(title: "아니오(처음 단계로)", configuration: .tinted())
     private var subscriptions = Set<AnyCancellable>()
     
@@ -27,7 +27,7 @@ class TranslateView: PhaseTemplateView {
         buttonsStack.axis = .horizontal
         buttonsStack.spacing = 10
         
-        [translateButton, goBackButton].forEach { button in
+        [summarizeButton, goBackButton].forEach { button in
             button.translatesAutoresizingMaskIntoConstraints = false
             button.widthAnchor.constraint(equalToConstant: (UIScreen.main.bounds.width - 50) / 2).isActive = true
             buttonsStack.addArrangedSubview(button)
@@ -37,7 +37,7 @@ class TranslateView: PhaseTemplateView {
         
         textField.textPublisher
             .sink { [unowned self] text in
-                translateButton.decideActivation(with: text)
+                summarizeButton.decideActivation(with: text)
             }
             .store(in: &subscriptions)
     }
