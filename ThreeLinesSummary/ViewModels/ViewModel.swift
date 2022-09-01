@@ -38,6 +38,9 @@ enum Phase {
 
 class ViewModel: ObservableObject {
     @Published private(set) var currentPhase: Phase = .pasted
+    @Published private(set) var pastedText = ""
+    @Published private(set) var translateResult = ""
+    @Published private(set) var summaryResult = ""
     @Published private(set) var loadingMessage = ""
     @Published private(set) var errorMessage = ""
 }
