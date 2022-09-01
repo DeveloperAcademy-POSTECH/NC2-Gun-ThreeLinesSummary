@@ -19,12 +19,6 @@ class PasteView: PhaseTemplateView {
     
     private func addButtons() {
         stack.addArrangedSubview(translateButton)
-        
-        textField.textPublisher
-            .sink { [unowned self] text in
-                translateButton.decideActivation(with: text)
-            }
-            .store(in: &subscriptions)
     }
     
     required init?(coder: NSCoder) {

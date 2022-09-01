@@ -16,8 +16,8 @@ class ErrorView: UIView {
         return label
     }()
     
-    private let goBackButton = UIButton.getSystemButton(title: "이전 단계로", configuration: .filled())
-    private let goToStartButton = UIButton.getSystemButton(title: "처음 단계로", configuration: .tinted())
+    let goBackButton = UIButton.getSystemButton(title: "이전 단계로", configuration: .filled())
+    let goToStartButton = UIButton.getSystemButton(title: "처음 단계로", configuration: .tinted())
     
     var message: String {
         get {

@@ -20,6 +20,16 @@ class BorderedTextField: UIView {
     private var textSubject = CurrentValueSubject<String, Never>("")
     lazy var textPublisher = textSubject.eraseToAnyPublisher()
     
+    var text: String {
+        get {
+            textField.text
+        }
+        
+        set {
+            textField.text = newValue
+        }
+    }
+    
     init(height: CGFloat, isCopiable: Bool = false) {
         super.init(frame: .zero)
         
