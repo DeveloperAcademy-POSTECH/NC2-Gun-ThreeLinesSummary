@@ -27,7 +27,7 @@ class TranslateView: PhaseTemplateView {
         buttonsStack.axis = .horizontal
         buttonsStack.spacing = 10
         
-        [summarizeButton, goBackButton].forEach { button in
+        [goBackButton, summarizeButton].forEach { button in
             button.translatesAutoresizingMaskIntoConstraints = false
             button.widthAnchor.constraint(equalToConstant: (UIScreen.main.bounds.width - 50) / 2).isActive = true
             buttonsStack.addArrangedSubview(button)
