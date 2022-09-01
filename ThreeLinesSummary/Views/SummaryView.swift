@@ -8,7 +8,7 @@
 import UIKit
 
 class SummaryView: PhaseTemplateView {
-    let goBackButton = UIButton.getSystemButton(title: "처음 단계로", configuration: .filled())
+    let goToStartButton = UIButton.getSystemButton(title: "처음 단계로", configuration: .filled())
     
     init() {
         super.init(title: "요약 완료", instruction: "요약이 완료되었습니다!", textCopiable: true)
@@ -16,7 +16,7 @@ class SummaryView: PhaseTemplateView {
     }
     
     private func addButtons() {
-        stack.addArrangedSubview(goBackButton)
+        stack.addArrangedSubview(goToStartButton)
     }
     
     required init?(coder: NSCoder) {

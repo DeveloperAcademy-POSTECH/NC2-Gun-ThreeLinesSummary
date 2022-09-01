@@ -81,6 +81,9 @@ class ViewController: UIViewController {
         
         translateView.goBackButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         errorView.goBackButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        
+        errorView.goToStartButton.addTarget(self, action: #selector(goToStart), for: .touchUpInside)
+        summaryView.goToStartButton.addTarget(self, action: #selector(goToStart), for: .touchUpInside)
     }
 
     @objc private func translateButtonClicked() {
@@ -93,6 +96,10 @@ class ViewController: UIViewController {
     
     @objc private func summarize() {
         viewModel.summarize(translateView.textField.text)
+    }
+    
+    @objc private func goToStart() {
+        viewModel.goToStart()
     }
 }
 

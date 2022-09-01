@@ -89,4 +89,8 @@ class ViewModel: ObservableObject {
             break
         }
     }
+    
+    func goToStart() {
+        currentPhase = .pasted
+    }
 }
