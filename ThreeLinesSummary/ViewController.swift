@@ -23,22 +23,21 @@ class ViewController: UIViewController {
         
         viewModel.$currentPhase
             .receive(on: DispatchQueue.main)
-            .map { [unowned self] phase -> UIView in
+            .sink { [unowned self] phase in
                 switch phase {
                 case .pasted:
-                    return pasteView
+                    self.view = pasteView
                 case .finishedTranslate:
-                    return translateView
+                    self.view = translateView
                 case .finishedSummarize:
-                    return summaryView
+                    self.view = summaryView
                 case .translating, .summarizing:
-                    return loadingView
+                    self.view = loadingView
                 case .failedTranslate, .failedSummarize:
-                    return errorView
+                    self.view = errorView
                 }
-            }
-            .sink { [unowned self] view in
-                self.view = view
+                
+                self.title = phase.navigationTitle
             }
             .store(in: &subscriptions)
         
