@@ -34,11 +34,5 @@ class TranslateView: PhaseTemplateView {
         }
         
         stack.addArrangedSubview(buttonsStack)
-        
-        textField.textPublisher
-            .sink { [unowned self] text in
-                summarizeButton.decideActivation(with: text)
-            }
-            .store(in: &subscriptions)
     }
 }
