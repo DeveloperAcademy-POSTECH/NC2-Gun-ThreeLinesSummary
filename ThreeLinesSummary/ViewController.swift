@@ -43,37 +43,27 @@ class ViewController: UIViewController {
         
         viewModel.$pastedText
             .receive(on: DispatchQueue.main)
-            .sink { [unowned self] text in
-                pasteView.textField.text = text
-            }
+            .assign(to: \.text, on: pasteView.textField)
             .store(in: &subscriptions)
         
         viewModel.$translateResult
             .receive(on: DispatchQueue.main)
-            .sink { [unowned self] result in
-                translateView.textField.text = result
-            }
+            .assign(to: \.text, on: translateView.textField)
             .store(in: &subscriptions)
         
         viewModel.$summaryResult
             .receive(on: DispatchQueue.main)
-            .sink { [unowned self] result in
-                summaryView.textField.text = result
-            }
+            .assign(to: \.text, on: summaryView.textField)
             .store(in: &subscriptions)
         
         viewModel.$loadingMessage
             .receive(on: DispatchQueue.main)
-            .sink { [unowned self] message in
-                loadingView.message = message
-            }
+            .assign(to: \.message, on: loadingView)
             .store(in: &subscriptions)
         
         viewModel.$errorMessage
             .receive(on: DispatchQueue.main)
-            .sink { [unowned self] message in
-                errorView.message = message
-            }
+            .assign(to: \.message, on: errorView)
             .store(in: &subscriptions)
         
         pasteView.translateButton.addTarget(self, action: #selector(translateButtonClicked), for: .touchUpInside)
