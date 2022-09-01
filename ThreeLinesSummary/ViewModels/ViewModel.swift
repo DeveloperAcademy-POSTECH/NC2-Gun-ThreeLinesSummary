@@ -61,4 +61,15 @@ class ViewModel: ObservableObject {
             }
         }
     }
+    
+    func goBack() {
+        switch currentPhase {
+        case .failedTranslate, .finishedTranslate:
+            currentPhase = .pasted
+        case .failedSummarize, .finishedSummarize:
+            currentPhase = .finishedTranslate
+        default:
+            break
+        }
+    }
 }
