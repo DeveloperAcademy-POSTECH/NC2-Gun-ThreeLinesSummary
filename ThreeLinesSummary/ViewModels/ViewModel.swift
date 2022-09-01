@@ -43,4 +43,22 @@ class ViewModel: ObservableObject {
     @Published private(set) var summaryResult = ""
     @Published private(set) var loadingMessage = ""
     @Published private(set) var errorMessage = ""
+    private var networkManager = NetworkManager(urlSession: URLSession.shared)
+    
+    func translate(_ text: String) {
+        currentPhase = .translating
+        loadingMessage = "번역 중..."
+        
+        Task {
+            do {
+                let result = try await networkManager.translate(text)
+                currentPhase = .finishedTranslate
+                translateResult = result
+            } catch {
+                self.currentPhase = .failedTranslate
+                let errorMessage = ((error as? NetworkError) ?? .unknown).message
+                self.errorMessage = errorMessage
+            }
+        }
+    }
 }

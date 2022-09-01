@@ -76,8 +76,12 @@ class ViewController: UIViewController {
                 errorView.message = message
             }
             .store(in: &subscriptions)
+        
+        pasteView.translateButton.addTarget(self, action: #selector(translateButtonClicked), for: .touchUpInside)
     }
 
-
+    @objc private func translateButtonClicked() {
+        viewModel.translate(pasteView.textField.text)
+    }
 }
 
