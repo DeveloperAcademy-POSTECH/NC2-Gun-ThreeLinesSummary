@@ -66,6 +66,10 @@ class ViewController: UIViewController {
             .assign(to: \.message, on: errorView)
             .store(in: &subscriptions)
         
+        viewModel.bindPastedText(to: pasteView.textField.textPublisher)
+        viewModel.bindTranslateText(to: translateView.textField.textPublisher)
+        viewModel.bindSummaryText(to: summaryView.textField.textPublisher)
+        
         pasteView.translateButton.addTarget(self, action: #selector(translateButtonClicked), for: .touchUpInside)
         translateView.summarizeButton.addTarget(self, action: #selector(summarize), for: .touchUpInside)
         
@@ -77,7 +81,7 @@ class ViewController: UIViewController {
     }
 
     @objc private func translateButtonClicked() {
-        viewModel.translate(pasteView.textField.text)
+        viewModel.translate()
     }
     
     @objc private func goBack() {
@@ -85,7 +89,7 @@ class ViewController: UIViewController {
     }
     
     @objc private func summarize() {
-        viewModel.summarize(translateView.textField.text)
+        viewModel.summarize()
     }
     
     @objc private func goToStart() {
