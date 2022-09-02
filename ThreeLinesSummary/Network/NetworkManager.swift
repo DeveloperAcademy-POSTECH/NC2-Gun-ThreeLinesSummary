@@ -16,7 +16,7 @@ struct NetworkManager {
             throw NetworkError.emptyText
         }
         
-        guard var urlRequest = TranslateAPIAuth.urlRequest else {
+        guard var urlRequest = TranslateAPI.urlRequest else {
             throw NetworkError.unknown
         }
         
@@ -61,7 +61,7 @@ struct NetworkManager {
     }
     
     func summarize(_ text: String) async throws -> String {
-        guard var urlRequest = SummaryAPIAuth.urlRequest else {
+        guard var urlRequest = SummaryAPI.urlRequest else {
             throw NetworkError.unknown
         }
         
