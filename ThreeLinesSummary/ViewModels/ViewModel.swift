@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 enum Phase {
     case pasted
@@ -45,13 +46,13 @@ class ViewModel: ObservableObject {
     @Published private(set) var errorMessage = ""
     private var networkManager = NetworkManager(urlSession: URLSession.shared)
     
-    func translate(_ text: String) {
+    @objc func translate() {
         currentPhase = .translating
         loadingMessage = "번역 중..."
         
         Task {
             do {
-                let result = try await networkManager.translate(text)
+                let result = try await networkManager.translate(pastedText)
                 currentPhase = .finishedTranslate
                 translateResult = result
             } catch {
@@ -62,13 +63,13 @@ class ViewModel: ObservableObject {
         }
     }
     
-    func summarize(_ text: String) {
+    @objc func summarize() {
         currentPhase = .summarizing
         loadingMessage = "요약 중..."
         
         Task {
             do {
-                let result = try await networkManager.summarize(text)
+                let result = try await networkManager.summarize(translateResult)
                 currentPhase = .finishedSummarize
                 summaryResult = result
             } catch {
@@ -79,7 +80,7 @@ class ViewModel: ObservableObject {
         }
     }
     
-    func goBack() {
+    @objc func goBack() {
         switch currentPhase {
         case .failedTranslate, .finishedTranslate:
             currentPhase = .pasted
@@ -90,7 +91,19 @@ class ViewModel: ObservableObject {
         }
     }
     
-    func goToStart() {
+    @objc func goToStart() {
         currentPhase = .pasted
+    }
+    
+    func bindPastedText(to publisher: Publishers.Share<AnyPublisher<String, Never>>) {
+        publisher.assign(to: &$pastedText)
+    }
+    
+    func bindTranslateText(to publisher: Publishers.Share<AnyPublisher<String, Never>>) {
+        publisher.assign(to: &$translateResult)
+    }
+    
+    func bindSummaryText(to publisher: Publishers.Share<AnyPublisher<String, Never>>) {
+        publisher.assign(to: &$summaryResult)
     }
 }

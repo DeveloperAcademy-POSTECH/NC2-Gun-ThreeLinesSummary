@@ -21,6 +21,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Binding
+        bindPhaseToViews()
+        bindTextFieldTextToPublished()
+        bindMessageToErrorLoadingView()
+        
+        // Button Actions
+        addTargetsToButtons()
+    }
+}
+
+// MARK: - Binding Methods
+extension ViewController {
+    private func bindPhaseToViews() {
         viewModel.$currentPhase
             .receive(on: DispatchQueue.main)
             .sink { [unowned self] phase in
@@ -40,7 +53,9 @@ class ViewController: UIViewController {
                 self.title = phase.navigationTitle
             }
             .store(in: &subscriptions)
-        
+    }
+    
+    private func bindTextFieldTextToPublished() {
         viewModel.$pastedText
             .receive(on: DispatchQueue.main)
             .assign(to: \.text, on: pasteView.textField)
@@ -56,6 +71,12 @@ class ViewController: UIViewController {
             .assign(to: \.text, on: summaryView.textField)
             .store(in: &subscriptions)
         
+        viewModel.bindPastedText(to: pasteView.textField.textPublisher)
+        viewModel.bindTranslateText(to: translateView.textField.textPublisher)
+        viewModel.bindSummaryText(to: summaryView.textField.textPublisher)
+    }
+    
+    private func bindMessageToErrorLoadingView() {
         viewModel.$loadingMessage
             .receive(on: DispatchQueue.main)
             .assign(to: \.message, on: loadingView)
@@ -65,19 +86,26 @@ class ViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .assign(to: \.message, on: errorView)
             .store(in: &subscriptions)
-        
+    }
+}
+
+// MARK: - Button Actions
+extension ViewController {
+    private func addTargetsToButtons() {
         pasteView.translateButton.addTarget(self, action: #selector(translateButtonClicked), for: .touchUpInside)
         translateView.summarizeButton.addTarget(self, action: #selector(summarize), for: .touchUpInside)
         
-        translateView.goBackButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
-        errorView.goBackButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        [translateView.goBackButton, errorView.goBackButton].forEach { [unowned self] button in
+            button.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        }
         
-        errorView.goToStartButton.addTarget(self, action: #selector(goToStart), for: .touchUpInside)
-        summaryView.goToStartButton.addTarget(self, action: #selector(goToStart), for: .touchUpInside)
+        [errorView.goToStartButton, summaryView.goToStartButton].forEach { [unowned self] button in
+            button.addTarget(self, action: #selector(goToStart), for: .touchUpInside)
+        }
     }
-
+    
     @objc private func translateButtonClicked() {
-        viewModel.translate(pasteView.textField.text)
+        viewModel.translate()
     }
     
     @objc private func goBack() {
@@ -85,11 +113,10 @@ class ViewController: UIViewController {
     }
     
     @objc private func summarize() {
-        viewModel.summarize(translateView.textField.text)
+        viewModel.summarize()
     }
     
     @objc private func goToStart() {
         viewModel.goToStart()
     }
 }
-
