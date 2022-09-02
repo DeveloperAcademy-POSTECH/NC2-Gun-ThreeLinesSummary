@@ -21,28 +21,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Binding
         bindPhaseToViews()
         bindTextFieldTextToPublished()
         bindMessageToErrorLoadingView()
+        
+        // Button Actions
         addTargetsToButtons()
     }
+}
 
-    @objc private func translateButtonClicked() {
-        viewModel.translate()
-    }
-    
-    @objc private func goBack() {
-        viewModel.goBack()
-    }
-    
-    @objc private func summarize() {
-        viewModel.summarize()
-    }
-    
-    @objc private func goToStart() {
-        viewModel.goToStart()
-    }
-    
+// MARK: - Binding Methods
+extension ViewController {
     private func bindPhaseToViews() {
         viewModel.$currentPhase
             .receive(on: DispatchQueue.main)
@@ -97,7 +87,10 @@ class ViewController: UIViewController {
             .assign(to: \.message, on: errorView)
             .store(in: &subscriptions)
     }
-    
+}
+
+// MARK: - Button Actions
+extension ViewController {
     private func addTargetsToButtons() {
         pasteView.translateButton.addTarget(self, action: #selector(translateButtonClicked), for: .touchUpInside)
         translateView.summarizeButton.addTarget(self, action: #selector(summarize), for: .touchUpInside)
@@ -110,5 +103,20 @@ class ViewController: UIViewController {
             button.addTarget(self, action: #selector(goToStart), for: .touchUpInside)
         }
     }
+    
+    @objc private func translateButtonClicked() {
+        viewModel.translate()
+    }
+    
+    @objc private func goBack() {
+        viewModel.goBack()
+    }
+    
+    @objc private func summarize() {
+        viewModel.summarize()
+    }
+    
+    @objc private func goToStart() {
+        viewModel.goToStart()
+    }
 }
-
