@@ -36,6 +36,9 @@ class PhaseTemplateView: UIView {
         instructionLabel.text = instruction
         
         setLayout()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        self.addGestureRecognizer(tapGesture)
     }
     
     private func setLayout() {
@@ -54,5 +57,9 @@ class PhaseTemplateView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc private func hideKeyboard() {
+        self.endEditing(true)
     }
 }
