@@ -73,11 +73,13 @@ class ViewController: UIViewController {
         pasteView.translateButton.addTarget(self, action: #selector(translateButtonClicked), for: .touchUpInside)
         translateView.summarizeButton.addTarget(self, action: #selector(summarize), for: .touchUpInside)
         
-        translateView.goBackButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
-        errorView.goBackButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        [translateView.goBackButton, errorView.goBackButton].forEach { [unowned self] button in
+            button.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        }
         
-        errorView.goToStartButton.addTarget(self, action: #selector(goToStart), for: .touchUpInside)
-        summaryView.goToStartButton.addTarget(self, action: #selector(goToStart), for: .touchUpInside)
+        [errorView.goToStartButton, summaryView.goToStartButton].forEach { [unowned self] button in
+            button.addTarget(self, action: #selector(goToStart), for: .touchUpInside)
+        }
     }
 
     @objc private func translateButtonClicked() {
