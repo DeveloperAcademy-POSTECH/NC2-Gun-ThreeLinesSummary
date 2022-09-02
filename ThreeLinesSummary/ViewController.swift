@@ -21,6 +21,29 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bindPhaseToViews()
+        bindTextFieldTextToPublished()
+        bindMessageToErrorLoadingView()
+        addTargetsToButtons()
+    }
+
+    @objc private func translateButtonClicked() {
+        viewModel.translate()
+    }
+    
+    @objc private func goBack() {
+        viewModel.goBack()
+    }
+    
+    @objc private func summarize() {
+        viewModel.summarize()
+    }
+    
+    @objc private func goToStart() {
+        viewModel.goToStart()
+    }
+    
+    private func bindPhaseToViews() {
         viewModel.$currentPhase
             .receive(on: DispatchQueue.main)
             .sink { [unowned self] phase in
@@ -40,7 +63,9 @@ class ViewController: UIViewController {
                 self.title = phase.navigationTitle
             }
             .store(in: &subscriptions)
-        
+    }
+    
+    private func bindTextFieldTextToPublished() {
         viewModel.$pastedText
             .receive(on: DispatchQueue.main)
             .assign(to: \.text, on: pasteView.textField)
@@ -56,6 +81,12 @@ class ViewController: UIViewController {
             .assign(to: \.text, on: summaryView.textField)
             .store(in: &subscriptions)
         
+        viewModel.bindPastedText(to: pasteView.textField.textPublisher)
+        viewModel.bindTranslateText(to: translateView.textField.textPublisher)
+        viewModel.bindSummaryText(to: summaryView.textField.textPublisher)
+    }
+    
+    private func bindMessageToErrorLoadingView() {
         viewModel.$loadingMessage
             .receive(on: DispatchQueue.main)
             .assign(to: \.message, on: loadingView)
@@ -65,11 +96,9 @@ class ViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .assign(to: \.message, on: errorView)
             .store(in: &subscriptions)
-        
-        viewModel.bindPastedText(to: pasteView.textField.textPublisher)
-        viewModel.bindTranslateText(to: translateView.textField.textPublisher)
-        viewModel.bindSummaryText(to: summaryView.textField.textPublisher)
-        
+    }
+    
+    private func addTargetsToButtons() {
         pasteView.translateButton.addTarget(self, action: #selector(translateButtonClicked), for: .touchUpInside)
         translateView.summarizeButton.addTarget(self, action: #selector(summarize), for: .touchUpInside)
         
@@ -80,22 +109,6 @@ class ViewController: UIViewController {
         [errorView.goToStartButton, summaryView.goToStartButton].forEach { [unowned self] button in
             button.addTarget(self, action: #selector(goToStart), for: .touchUpInside)
         }
-    }
-
-    @objc private func translateButtonClicked() {
-        viewModel.translate()
-    }
-    
-    @objc private func goBack() {
-        viewModel.goBack()
-    }
-    
-    @objc private func summarize() {
-        viewModel.summarize()
-    }
-    
-    @objc private func goToStart() {
-        viewModel.goToStart()
     }
 }
 
