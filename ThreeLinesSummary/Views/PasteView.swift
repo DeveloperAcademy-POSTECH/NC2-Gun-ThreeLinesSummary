@@ -9,6 +9,7 @@ import UIKit
 import Combine
 
 class PasteView: PhaseTemplateView {
+    let textScanButton = UIButton.getSystemButton(title: "텍스트 스캔하기", configuration: .tinted())
     let translateButton = UIButton.getSystemButton(title: "번역하기", configuration: .filled())
     private var subscriptions = Set<AnyCancellable>()
     
@@ -18,7 +19,16 @@ class PasteView: PhaseTemplateView {
     }
     
     private func addButtons() {
-        stack.addArrangedSubview(translateButton)
+        let buttonsStack = UIStackView()
+        buttonsStack.axis = .horizontal
+        buttonsStack.spacing = 10
+        
+        [textScanButton, translateButton].forEach { button in
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.widthAnchor.constraint(equalToConstant: (UIScreen.main.bounds.width - 50) / 2).isActive = true
+            buttonsStack.addArrangedSubview(button)
+        }
+        stack.addArrangedSubview(buttonsStack)
     }
     
     required init?(coder: NSCoder) {

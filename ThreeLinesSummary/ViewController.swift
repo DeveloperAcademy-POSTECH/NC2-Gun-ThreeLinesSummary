@@ -92,6 +92,7 @@ extension ViewController {
 // MARK: - Button Actions
 extension ViewController {
     private func addTargetsToButtons() {
+        pasteView.textScanButton.addTarget(self, action: #selector(captureTextFromCamera), for: .touchUpInside)
         pasteView.translateButton.addTarget(self, action: #selector(translateButtonClicked), for: .touchUpInside)
         translateView.summarizeButton.addTarget(self, action: #selector(summarize), for: .touchUpInside)
         
