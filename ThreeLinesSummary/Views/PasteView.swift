@@ -14,7 +14,7 @@ class PasteView: PhaseTemplateView {
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
-        super.init(title: "영어 텍스트 붙여넣기", instruction: "카메라의 live text 기능을 이용하여 영어 텍스트를 복사, 붙여넣기 하고 오타를 수정하세요.", textCopiable: false)
+        super.init(title: "영어 텍스트 붙여넣기", instruction: "영어 텍스트를 복사, 붙여넣기 하고 오타를 수정하세요.", textCopiable: false)
         addButtons()
     }
     
