@@ -121,3 +121,17 @@ extension ViewController {
         viewModel.goToStart()
     }
 }
+
+extension ViewController: UIKeyInput {
+    var hasText: Bool {
+        false
+    }
+    
+    func deleteBackward() {
+        pasteView.textField.text = ""
+    }
+    
+    func insertText(_ text: String) {
+        pasteView.textField.text = text
+    }
+}
