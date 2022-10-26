@@ -18,7 +18,7 @@ class BorderedTextField: UIView {
     }()
     
     private var textSubject = CurrentValueSubject<String, Never>("")
-    lazy var textPublisher = textSubject.eraseToAnyPublisher().share()
+    lazy var textPublisher = textSubject.eraseToAnyPublisher()
     
     var text: String {
         get {

@@ -95,15 +95,15 @@ class ViewModel: ObservableObject {
         currentPhase = .pasted
     }
     
-    func bindPastedText(to publisher: Publishers.Share<AnyPublisher<String, Never>>) {
+    func bindPastedText(to publisher: AnyPublisher<String, Never>) {
         publisher.assign(to: &$pastedText)
     }
     
-    func bindTranslateText(to publisher: Publishers.Share<AnyPublisher<String, Never>>) {
+    func bindTranslateText(to publisher: AnyPublisher<String, Never>) {
         publisher.assign(to: &$translateResult)
     }
     
-    func bindSummaryText(to publisher: Publishers.Share<AnyPublisher<String, Never>>) {
+    func bindSummaryText(to publisher: AnyPublisher<String, Never>) {
         publisher.assign(to: &$summaryResult)
     }
 }
