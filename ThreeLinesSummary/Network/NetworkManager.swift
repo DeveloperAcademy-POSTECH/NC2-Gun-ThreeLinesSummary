@@ -61,6 +61,10 @@ struct NetworkManager {
     }
     
     func summarize(_ text: String) async throws -> String {
+        if text.isEmpty {
+            throw NetworkError.emptyText
+        }
+        
         guard var urlRequest = SummaryAPI.urlRequest else {
             throw NetworkError.unknown
         }
