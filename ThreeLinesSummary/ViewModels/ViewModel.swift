@@ -46,7 +46,7 @@ class ViewModel: ObservableObject {
     @Published private(set) var errorMessage = ""
     private var networkManager = NetworkManager(urlSession: URLSession.shared)
     
-    @objc func translate() {
+    func translate() {
         currentPhase = .translating
         loadingMessage = "번역 중..."
         
@@ -63,7 +63,7 @@ class ViewModel: ObservableObject {
         }
     }
     
-    @objc func summarize() {
+    func summarize() {
         currentPhase = .summarizing
         loadingMessage = "요약 중..."
         
@@ -80,7 +80,7 @@ class ViewModel: ObservableObject {
         }
     }
     
-    @objc func goBack() {
+    func goBack() {
         switch currentPhase {
         case .failedTranslate, .finishedTranslate:
             currentPhase = .pasted
@@ -91,7 +91,7 @@ class ViewModel: ObservableObject {
         }
     }
     
-    @objc func goToStart() {
+    func goToStart() {
         currentPhase = .pasted
     }
     
