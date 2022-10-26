@@ -8,7 +8,7 @@
 import Foundation
 @testable import ThreeLinesSummary
 
-class FakeURLSession: URLSessionProtocol {
+class MockURLSession: URLSessionProtocol {
     let statusCode: Int
     let data: Data
     

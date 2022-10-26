@@ -23,7 +23,7 @@ class NetworkManagerUnitTests: XCTestCase {
     }
     
     func givenSutAndExpectation(statusCode: Int, fileName: String) {
-        sut = NetworkManager(urlSession: FakeURLSession(statusCode: statusCode, fileName: fileName))
+        sut = NetworkManager(urlSession: MockURLSession(statusCode: statusCode, fileName: fileName))
         expectation = expectation(description: "Task should be executed during test.")
     }
     
