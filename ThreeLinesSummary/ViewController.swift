@@ -54,7 +54,7 @@ extension ViewController {
             }
             .store(in: &subscriptions)
         
-        title = Phase.pasted.navigationTitle
+        title = ViewModel.Phase.pasted.navigationTitle
     }
     
     private func bindTextFieldTextToPublished() {
