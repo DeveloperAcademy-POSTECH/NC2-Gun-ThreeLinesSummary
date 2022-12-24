@@ -8,13 +8,13 @@
 import UIKit
 import Combine
 
-class PasteView: PhaseTemplateView {
+class EnglishTextView: PhaseTemplateView {
     let textScanButton = UIButton.getSystemButton(title: "텍스트 스캔하기", configuration: .tinted())
     let translateButton = UIButton.getSystemButton(title: "번역하기", configuration: .filled())
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
-        super.init(title: "영어 텍스트 붙여넣기", instruction: "영어 텍스트를 복사, 붙여넣기 하고 오타를 수정하세요.", textCopiable: false)
+        super.init(instruction: "영어 텍스트를 복사, 붙여넣기 하고 오타를 수정하세요.", textCopiable: false)
         addButtons()
     }
     

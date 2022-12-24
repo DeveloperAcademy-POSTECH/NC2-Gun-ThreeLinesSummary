@@ -11,7 +11,7 @@ class SummaryView: PhaseTemplateView {
     let goToStartButton = UIButton.getSystemButton(title: "처음 단계로", configuration: .filled())
     
     init() {
-        super.init(title: "요약 완료", instruction: "요약이 완료되었습니다!", textCopiable: true)
+        super.init(instruction: "요약이 완료되었습니다!", textCopiable: true)
         addButtons()
     }
     
