@@ -8,14 +8,14 @@
 import UIKit
 import Combine
 
-class ViewController: UIViewController {
+class TranslateSummaryViewController: UIViewController {
     let pasteView = PasteView()
     let translateView = TranslateView()
     let summaryView = SummaryView()
     let loadingView = LoadingView()
     let errorView = ErrorView()
     
-    private var viewModel = ViewModel()
+    private var viewModel = TranslateSummaryViewModel()
     private var subscriptions = Set<AnyCancellable>()
     
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: - Binding Methods
-extension ViewController {
+extension TranslateSummaryViewController {
     private func bindPhaseToViews() {
         viewModel.$currentPhase
             .receive(on: DispatchQueue.main)
@@ -54,7 +54,7 @@ extension ViewController {
             }
             .store(in: &subscriptions)
         
-        title = ViewModel.Phase.pasted.navigationTitle
+        title = TranslateSummaryViewModel.Phase.pasted.navigationTitle
     }
     
     private func bindTextFieldTextToPublished() {
@@ -92,7 +92,7 @@ extension ViewController {
 }
 
 // MARK: - Button Actions
-extension ViewController {
+extension TranslateSummaryViewController {
     private func addTargetsToButtons() {
         pasteView.textScanButton.addTarget(self, action: #selector(captureTextFromCamera), for: .touchUpInside)
         pasteView.translateButton.addTarget(self, action: #selector(translateButtonClicked), for: .touchUpInside)
@@ -124,7 +124,7 @@ extension ViewController {
     }
 }
 
-extension ViewController: UIKeyInput {
+extension TranslateSummaryViewController: UIKeyInput {
     var hasText: Bool {
         false
     }

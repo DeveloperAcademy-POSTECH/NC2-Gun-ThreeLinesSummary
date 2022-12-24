@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class ViewModel: ObservableObject {
+class TranslateSummaryViewModel: ObservableObject {
     @Published private(set) var currentPhase: Phase = .pasted
     @Published private(set) var pastedText = ""
     @Published private(set) var translateResult = ""
@@ -79,7 +79,7 @@ class ViewModel: ObservableObject {
     }
 }
 
-extension ViewModel {
+extension TranslateSummaryViewModel {
     enum Phase {
         case pasted
         case translating
