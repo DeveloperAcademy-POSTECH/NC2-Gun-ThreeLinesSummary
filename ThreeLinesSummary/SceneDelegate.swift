@@ -20,7 +20,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.backgroundColor = .systemBackground
-        window?.rootViewController = UINavigationController(rootViewController: TranslateSummaryViewController())
+        
+        let translateSummaryVC = UINavigationController(rootViewController: TranslateSummaryViewController())
+        translateSummaryVC.setTabBarImage(imageName: "character.bubble.fill", title: "번역 + 요약")
+        
+        let summaryVC = UIViewController()
+        summaryVC.setTabBarImage(imageName: "list.number", title: "요약")
+        
+        let tabVC = UITabBarController()
+        tabVC.viewControllers = [translateSummaryVC, summaryVC]
+        
+        window?.rootViewController = tabVC
         window?.makeKeyAndVisible()
     }
 

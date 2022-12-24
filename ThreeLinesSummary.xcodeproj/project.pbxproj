@@ -51,6 +51,7 @@
 		ABEC711428BC8A2000488104 /* PhaseTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC711328BC8A2000488104 /* PhaseTemplateView.swift */; };
 		ABEC711628BCA48600488104 /* EnglishTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC711528BCA48600488104 /* EnglishTextView.swift */; };
 		ABEC711828BCA9C900488104 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC711728BCA9C900488104 /* UIButton.swift */; };
+		ABF82E76295727A3008852B9 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF82E75295727A3008852B9 /* UIViewController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		ABEC711328BC8A2000488104 /* PhaseTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseTemplateView.swift; sourceTree = "<group>"; };
 		ABEC711528BCA48600488104 /* EnglishTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishTextView.swift; sourceTree = "<group>"; };
 		ABEC711728BCA9C900488104 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		ABF82E75295727A3008852B9 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 		ABB8B80328B8B0D600B7818F /* ThreeLinesSummary */ = {
 			isa = PBXGroup;
 			children = (
+				ABF82E742957278F008852B9 /* Extensions */,
 				ABF82E7329571940008852B9 /* Views */,
 				AB2FF4E128BF352E0050A03B /* Secrets */,
 				AB3EF2B628BE6521006B5327 /* Models */,
@@ -302,6 +305,14 @@
 				ABEC710C28BC7EED00488104 /* Helpers */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		ABF82E742957278F008852B9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ABF82E75295727A3008852B9 /* UIViewController+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,6 +457,7 @@
 				ABB8B80528B8B0D600B7818F /* AppDelegate.swift in Sources */,
 				ABEC710B28BC75F900488104 /* BorderedTextField.swift in Sources */,
 				AB2FF4F028BF8EFA0050A03B /* SummaryResponseBody.swift in Sources */,
+				ABF82E76295727A3008852B9 /* UIViewController+.swift in Sources */,
 				ABB8B80728B8B0D600B7818F /* SceneDelegate.swift in Sources */,
 				ABEC711828BCA9C900488104 /* UIButton.swift in Sources */,
 				AB2FF4E328BF353F0050A03B /* TranslateAPI.swift in Sources */,
