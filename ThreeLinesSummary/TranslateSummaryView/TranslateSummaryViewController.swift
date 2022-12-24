@@ -50,11 +50,11 @@ extension TranslateSummaryViewController {
                     self.view = errorView
                 }
                 
-                self.title = phase.navigationTitle
+                navigationItem.title = phase.navigationTitle
             }
             .store(in: &subscriptions)
         
-        title = TranslateSummaryViewModel.Phase.pasted.navigationTitle
+        navigationItem.title = TranslateSummaryViewModel.Phase.pasted.navigationTitle
     }
     
     private func bindTextFieldTextToPublished() {
