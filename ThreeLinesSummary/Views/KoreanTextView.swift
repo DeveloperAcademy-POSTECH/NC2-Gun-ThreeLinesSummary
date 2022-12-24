@@ -14,7 +14,7 @@ class KoreanTextView: PhaseTemplateView {
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
-        super.init(title: "번역 완료", instruction: "요약하시겠습니까?", textCopiable: true)
+        super.init(instruction: "요약하시겠습니까?", textCopiable: true)
         addButtons()
     }
     

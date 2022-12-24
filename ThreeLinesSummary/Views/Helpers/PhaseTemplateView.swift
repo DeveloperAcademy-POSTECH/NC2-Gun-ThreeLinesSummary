@@ -26,10 +26,7 @@ class PhaseTemplateView: UIView {
         return stack
     }()
     
-    let navigationBarTitle: String
-    
-    init(title: String, instruction: String, textCopiable: Bool) {
-        self.navigationBarTitle = title
+    init(instruction: String, textCopiable: Bool) {
         self.textField = BorderedTextField(height: UIScreen.main.bounds.height - 351, isCopiable: textCopiable)
         super.init(frame: .zero)
         
