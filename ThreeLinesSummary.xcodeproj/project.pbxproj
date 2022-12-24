@@ -255,7 +255,7 @@
 				AB2FF4E128BF352E0050A03B /* Secrets */,
 				AB3EF2B628BE6521006B5327 /* Models */,
 				AB2FDA8C28BE307E0008826F /* Network */,
-				ABEC710928BC75D900488104 /* TranslateSummaryView */,
+				ABEC710928BC75D900488104 /* TranslateSummaryTab */,
 				ABB8B80428B8B0D600B7818F /* AppDelegate.swift */,
 				ABB8B80628B8B0D600B7818F /* SceneDelegate.swift */,
 				ABEC710828BC75C300488104 /* Files */,
@@ -273,13 +273,13 @@
 			name = Files;
 			sourceTree = "<group>";
 		};
-		ABEC710928BC75D900488104 /* TranslateSummaryView */ = {
+		ABEC710928BC75D900488104 /* TranslateSummaryTab */ = {
 			isa = PBXGroup;
 			children = (
 				AB21AED428C0736200247199 /* TranslateSummaryViewModel.swift */,
 				ABB8B80828B8B0D600B7818F /* TranslateSummaryViewController.swift */,
 			);
-			path = TranslateSummaryView;
+			path = TranslateSummaryTab;
 			sourceTree = "<group>";
 		};
 		ABEC710C28BC7EED00488104 /* Helpers */ = {
