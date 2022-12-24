@@ -8,13 +8,13 @@
 import UIKit
 import Combine
 
-class TranslateView: PhaseTemplateView {
+class KoreanTextView: PhaseTemplateView {
     let summarizeButton = UIButton.getSystemButton(title: "예", configuration: .filled())
     let goBackButton = UIButton.getSystemButton(title: "아니오(처음 단계로)", configuration: .tinted())
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
-        super.init(title: "번역 완료", instruction: "번역이 완료되었습니다.\n요약하시겠습니까?", textCopiable: true)
+        super.init(title: "번역 완료", instruction: "요약하시겠습니까?", textCopiable: true)
         addButtons()
     }
     

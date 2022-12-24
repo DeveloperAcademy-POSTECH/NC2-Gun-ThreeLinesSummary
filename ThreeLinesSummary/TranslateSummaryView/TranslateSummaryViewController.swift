@@ -9,8 +9,8 @@ import UIKit
 import Combine
 
 class TranslateSummaryViewController: UIViewController {
-    let pasteView = PasteView()
-    let translateView = TranslateView()
+    let pasteView = EnglishTextView()
+    let translateView = KoreanTextView()
     let summaryView = SummaryView()
     let loadingView = LoadingView()
     let errorView = ErrorView()

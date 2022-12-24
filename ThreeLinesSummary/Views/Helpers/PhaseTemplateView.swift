@@ -30,7 +30,7 @@ class PhaseTemplateView: UIView {
     
     init(title: String, instruction: String, textCopiable: Bool) {
         self.navigationBarTitle = title
-        self.textField = BorderedTextField(height: UIScreen.main.bounds.height - 268, isCopiable: textCopiable)
+        self.textField = BorderedTextField(height: UIScreen.main.bounds.height - 351, isCopiable: textCopiable)
         super.init(frame: .zero)
         
         instructionLabel.text = instruction
