@@ -52,6 +52,8 @@ extension SummaryTabViewController {
                 navigationItem.title = phase.navigationTitle
             }
             .store(in: &subscriptions)
+        
+        navigationItem.title = SummaryTabViewModel.Phase.pasted.navigationTitle
     }
     
     private func bindTextFieldToPublished() {
