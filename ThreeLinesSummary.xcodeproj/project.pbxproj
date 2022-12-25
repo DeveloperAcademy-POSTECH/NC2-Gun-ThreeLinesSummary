@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB04D4762958792F00FFBBFD /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04D4752958792F00FFBBFD /* SummaryViewController.swift */; };
 		AB21AED528C0736200247199 /* TranslateSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB21AED428C0736200247199 /* TranslateSummaryViewModel.swift */; };
 		AB2FDA8328BDC96F0008826F /* KoreanTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FDA8228BDC96F0008826F /* KoreanTextView.swift */; };
 		AB2FDA8528BDD5FA0008826F /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2FDA8428BDD5FA0008826F /* SummaryView.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB04D4752958792F00FFBBFD /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		AB21AED428C0736200247199 /* TranslateSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateSummaryViewModel.swift; sourceTree = "<group>"; };
 		AB2FDA8228BDC96F0008826F /* KoreanTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoreanTextView.swift; sourceTree = "<group>"; };
 		AB2FDA8428BDD5FA0008826F /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB04D4742958791200FFBBFD /* SummaryTab */ = {
+			isa = PBXGroup;
+			children = (
+				AB04D4752958792F00FFBBFD /* SummaryViewController.swift */,
+			);
+			path = SummaryTab;
+			sourceTree = "<group>";
+		};
 		AB2FDA8C28BE307E0008826F /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +260,7 @@
 		ABB8B80328B8B0D600B7818F /* ThreeLinesSummary */ = {
 			isa = PBXGroup;
 			children = (
+				AB04D4742958791200FFBBFD /* SummaryTab */,
 				ABF82E742957278F008852B9 /* Extensions */,
 				ABF82E7329571940008852B9 /* Views */,
 				AB2FF4E128BF352E0050A03B /* Secrets */,
@@ -441,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB3AE7D228BF080300002CF8 /* NetworkError.swift in Sources */,
+				AB04D4762958792F00FFBBFD /* SummaryViewController.swift in Sources */,
 				AB3AE7D428BF0A6000002CF8 /* ErrorResponseBody.swift in Sources */,
 				AB2FF4F228BF9A8D0050A03B /* SummaryRequestBody.swift in Sources */,
 				AB2FDA8E28BE308B0008826F /* URLSessionProtocol.swift in Sources */,
