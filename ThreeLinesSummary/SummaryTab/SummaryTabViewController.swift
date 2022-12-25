@@ -27,6 +27,7 @@ class SummaryTabViewController: UIViewController {
         
         bindPhaseToViews()
         bindTextFieldToPublished()
+        bindErrorMessageToErrorView()
     }
 }
 
@@ -65,5 +66,12 @@ extension SummaryTabViewController {
         
         viewModel.bindPastedText(to: koreanTextView.textField.textPublisher)
         viewModel.bindSummaryText(to: summaryView.textField.textPublisher)
+    }
+    
+    private func bindErrorMessageToErrorView() {
+        viewModel.$errorMessage
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.message, on: errorView)
+            .store(in: &subscriptions)
     }
 }
