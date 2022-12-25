@@ -6,13 +6,23 @@
 //
 
 import UIKit
+import Combine
 
 class SummaryTabViewController: UIViewController {
-    let koreanTextView = KoreanTextView(isFirstView: true)
-    let summaryView = SummaryView()
-    let errorView = ErrorView()
+    private let koreanTextView = KoreanTextView(isFirstView: true)
+    private let summaryView = SummaryView()
+    private let errorView = ErrorView()
+    private let loadingView: LoadingView = {
+        let loadingView = LoadingView()
+        loadingView.message = "요약 중..."
+        
+        return loadingView
+    }()
+    
+    private let viewModel = SummaryTabViewModel()
+    private let subscriptions = Set<AnyCancellable>()
     
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
     }
 }
