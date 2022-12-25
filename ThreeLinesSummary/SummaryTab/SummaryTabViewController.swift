@@ -28,6 +28,7 @@ class SummaryTabViewController: UIViewController {
         bindPhaseToViews()
         bindTextFieldToPublished()
         bindErrorMessageToErrorView()
+        addTargetsToButtons()
     }
 }
 
@@ -73,5 +74,45 @@ extension SummaryTabViewController {
             .receive(on: DispatchQueue.main)
             .assign(to: \.message, on: errorView)
             .store(in: &subscriptions)
+    }
+}
+
+// MARK: - Button Actions
+extension SummaryTabViewController {
+    private func addTargetsToButtons() {
+        koreanTextView.textScanButton.addTarget(self, action: #selector(captureTextFromCamera), for: .touchUpInside)
+        koreanTextView.summarizeButton.addTarget(self, action: #selector(summarize), for: .touchUpInside)
+        
+        errorView.goBackButton.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        
+        [errorView.goToStartButton, summaryView.goToStartButton].forEach { button in
+            button.addTarget(self, action: #selector(goToStart), for: .touchUpInside)
+        }
+    }
+    
+    @objc private func summarize() {
+        viewModel.summarize()
+    }
+    
+    @objc private func goBack() {
+        viewModel.goBack()
+    }
+    
+    @objc private func goToStart() {
+        viewModel.goToStart()
+    }
+}
+
+extension SummaryTabViewController: UIKeyInput {
+    var hasText: Bool {
+        false
+    }
+    
+    func deleteBackward() {
+        koreanTextView.textField.text = ""
+    }
+    
+    func insertText(_ text: String) {
+        koreanTextView.textField.text = text
     }
 }
