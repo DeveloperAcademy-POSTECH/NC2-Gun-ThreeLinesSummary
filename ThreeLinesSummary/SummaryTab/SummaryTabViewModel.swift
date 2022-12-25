@@ -38,6 +38,14 @@ class SummaryTabViewModel {
     func goToStart() {
         currentPhase = .pasted
     }
+    
+    func bindPastedText(to publisher: AnyPublisher<String, Never>) {
+        publisher.assign(to: &$pastedText)
+    }
+    
+    func bindSummaryText(to publisher: AnyPublisher<String, Never>) {
+        publisher.assign(to: &$summaryResult)
+    }
 }
 
 extension SummaryTabViewModel {

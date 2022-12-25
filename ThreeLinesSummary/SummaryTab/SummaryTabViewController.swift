@@ -24,6 +24,9 @@ class SummaryTabViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bindPhaseToViews()
+        bindTextFieldToPublished()
     }
 }
 
@@ -47,5 +50,20 @@ extension SummaryTabViewController {
                 navigationItem.title = phase.navigationTitle
             }
             .store(in: &subscriptions)
+    }
+    
+    private func bindTextFieldToPublished() {
+        viewModel.$pastedText
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.text, on: koreanTextView.textField)
+            .store(in: &subscriptions)
+        
+        viewModel.$summaryResult
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.text, on: summaryView.textField)
+            .store(in: &subscriptions)
+        
+        viewModel.bindPastedText(to: koreanTextView.textField.textPublisher)
+        viewModel.bindSummaryText(to: summaryView.textField.textPublisher)
     }
 }
