@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class SummaryViewModel {
+class SummaryTabViewModel {
     @Published private(set) var currentPhase: Phase = .pasted
     @Published private(set) var pastedText = ""
     @Published private(set) var summaryResult = ""
@@ -40,7 +40,7 @@ class SummaryViewModel {
     }
 }
 
-extension SummaryViewModel {
+extension SummaryTabViewModel {
     enum Phase {
         case pasted
         case summarizing

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SummaryViewController: UIViewController {
+class SummaryTabViewController: UIViewController {
     let koreanTextView = KoreanTextView(isFirstView: true)
     let summaryView = SummaryView()
     let errorView = ErrorView()

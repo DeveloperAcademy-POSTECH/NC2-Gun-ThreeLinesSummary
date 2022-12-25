@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.backgroundColor = .systemBackground
         
-        let translateSummaryVC = UINavigationController(rootViewController: TranslateSummaryViewController())
+        let translateSummaryVC = UINavigationController(rootViewController: TranslateSummaryTabViewController())
         translateSummaryVC.setTabBarImage(imageName: "character.bubble.fill", title: "번역 + 요약")
         
         let summaryVC = UIViewController()
