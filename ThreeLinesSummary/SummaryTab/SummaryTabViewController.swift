@@ -20,9 +20,32 @@ class SummaryTabViewController: UIViewController {
     }()
     
     private let viewModel = SummaryTabViewModel()
-    private let subscriptions = Set<AnyCancellable>()
+    private var subscriptions = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
+
+// MARK: - Binding
+extension SummaryTabViewController {
+    private func bindPhaseToViews() {
+        viewModel.$currentPhase
+            .receive(on: DispatchQueue.main)
+            .sink { [unowned self] phase in
+                switch phase {
+                case .pasted:
+                    self.view = koreanTextView
+                case .summarizing:
+                    self.view = loadingView
+                case .finished:
+                    self.view = summaryView
+                case .failed:
+                    self.view = errorView
+                }
+                
+                navigationItem.title = phase.navigationTitle
+            }
+            .store(in: &subscriptions)
     }
 }

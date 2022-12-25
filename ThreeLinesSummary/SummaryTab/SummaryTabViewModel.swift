@@ -46,5 +46,18 @@ extension SummaryTabViewModel {
         case summarizing
         case failed
         case finished
+        
+        var navigationTitle: String {
+            switch self {
+            case .pasted:
+                return "한글 텍스트 붙여넣기"
+            case .summarizing:
+                return "요약 중"
+            case .failed:
+                return "요약 실패"
+            case .finished:
+                return "요약 완료"
+            }
+        }
     }
 }
