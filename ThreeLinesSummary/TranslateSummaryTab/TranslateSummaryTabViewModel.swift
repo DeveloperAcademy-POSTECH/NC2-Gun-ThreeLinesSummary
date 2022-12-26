@@ -8,14 +8,14 @@
 import Foundation
 import Combine
 
-class TranslateSummaryViewModel: ObservableObject {
+class TranslateSummaryTabViewModel {
     @Published private(set) var currentPhase: Phase = .pasted
     @Published private(set) var pastedText = ""
     @Published private(set) var translateResult = ""
     @Published private(set) var summaryResult = ""
     @Published private(set) var loadingMessage = ""
     @Published private(set) var errorMessage = ""
-    private var networkManager = NetworkManager(urlSession: URLSession.shared)
+    private let networkManager = NetworkManager(urlSession: URLSession.shared)
     
     func translate() {
         currentPhase = .translating
@@ -77,9 +77,13 @@ class TranslateSummaryViewModel: ObservableObject {
     func bindSummaryText(to publisher: AnyPublisher<String, Never>) {
         publisher.assign(to: &$summaryResult)
     }
+    
+    func appendScannedText(_ text: String) {
+        pastedText += text
+    }
 }
 
-extension TranslateSummaryViewModel {
+extension TranslateSummaryTabViewModel {
     enum Phase {
         case pasted
         case translating

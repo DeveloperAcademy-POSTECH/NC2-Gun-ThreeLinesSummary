@@ -14,7 +14,7 @@ class EnglishTextView: PhaseTemplateView {
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
-        super.init(instruction: "영어 텍스트를 복사, 붙여넣기 하고 오타를 수정하세요.", textCopiable: false)
+        super.init(instruction: "영어 텍스트를 복사, 붙여넣기하세요.", textCopiable: false)
         addButtons()
     }
     

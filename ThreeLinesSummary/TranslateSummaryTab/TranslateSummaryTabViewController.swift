@@ -8,14 +8,14 @@
 import UIKit
 import Combine
 
-class TranslateSummaryViewController: UIViewController {
+class TranslateSummaryTabViewController: UIViewController {
     let pasteView = EnglishTextView()
     let translateView = KoreanTextView()
     let summaryView = SummaryView()
     let loadingView = LoadingView()
     let errorView = ErrorView()
     
-    private var viewModel = TranslateSummaryViewModel()
+    private var viewModel = TranslateSummaryTabViewModel()
     private var subscriptions = Set<AnyCancellable>()
     
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ class TranslateSummaryViewController: UIViewController {
 }
 
 // MARK: - Binding Methods
-extension TranslateSummaryViewController {
+extension TranslateSummaryTabViewController {
     private func bindPhaseToViews() {
         viewModel.$currentPhase
             .receive(on: DispatchQueue.main)
@@ -54,7 +54,7 @@ extension TranslateSummaryViewController {
             }
             .store(in: &subscriptions)
         
-        navigationItem.title = TranslateSummaryViewModel.Phase.pasted.navigationTitle
+        navigationItem.title = TranslateSummaryTabViewModel.Phase.pasted.navigationTitle
     }
     
     private func bindTextFieldTextToPublished() {
@@ -92,7 +92,7 @@ extension TranslateSummaryViewController {
 }
 
 // MARK: - Button Actions
-extension TranslateSummaryViewController {
+extension TranslateSummaryTabViewController {
     private func addTargetsToButtons() {
         pasteView.textScanButton.addTarget(self, action: #selector(captureTextFromCamera), for: .touchUpInside)
         pasteView.translateButton.addTarget(self, action: #selector(translateButtonClicked), for: .touchUpInside)
@@ -124,16 +124,16 @@ extension TranslateSummaryViewController {
     }
 }
 
-extension TranslateSummaryViewController: UIKeyInput {
+extension TranslateSummaryTabViewController: UIKeyInput {
     var hasText: Bool {
-        false
+        true
     }
     
     func deleteBackward() {
-        pasteView.textField.text = ""
+        
     }
     
     func insertText(_ text: String) {
-        pasteView.textField.text = text
+        viewModel.appendScannedText(text)
     }
 }
