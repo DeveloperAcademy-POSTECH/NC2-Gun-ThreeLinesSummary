@@ -15,7 +15,7 @@ class TranslateSummaryTabViewModel {
     @Published private(set) var summaryResult = ""
     @Published private(set) var loadingMessage = ""
     @Published private(set) var errorMessage = ""
-    private var networkManager = NetworkManager(urlSession: URLSession.shared)
+    private let networkManager = NetworkManager(urlSession: URLSession.shared)
     
     func translate() {
         currentPhase = .translating
