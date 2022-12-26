@@ -27,7 +27,7 @@ class PhaseTemplateView: UIView {
     }()
     
     init(instruction: String, textCopiable: Bool) {
-        self.textField = BorderedTextField(height: UIScreen.main.bounds.height - 351, isCopiable: textCopiable)
+        self.textField = BorderedTextField(height: UIScreen.main.bounds.height - 331, isCopiable: textCopiable)
         super.init(frame: .zero)
         
         instructionLabel.text = instruction
