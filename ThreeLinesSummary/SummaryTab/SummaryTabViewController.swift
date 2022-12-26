@@ -107,14 +107,14 @@ extension SummaryTabViewController {
 
 extension SummaryTabViewController: UIKeyInput {
     var hasText: Bool {
-        false
+        true
     }
     
     func deleteBackward() {
-        koreanTextView.textField.text = ""
+
     }
     
     func insertText(_ text: String) {
-        koreanTextView.textField.text = text
+        viewModel.appendScannedText(text)
     }
 }

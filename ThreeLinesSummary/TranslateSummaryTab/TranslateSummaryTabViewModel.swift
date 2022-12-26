@@ -77,6 +77,10 @@ class TranslateSummaryTabViewModel {
     func bindSummaryText(to publisher: AnyPublisher<String, Never>) {
         publisher.assign(to: &$summaryResult)
     }
+    
+    func appendScannedText(_ text: String) {
+        pastedText += text
+    }
 }
 
 extension TranslateSummaryTabViewModel {

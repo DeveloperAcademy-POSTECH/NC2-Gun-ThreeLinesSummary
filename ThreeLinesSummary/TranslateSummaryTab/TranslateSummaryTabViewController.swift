@@ -126,14 +126,14 @@ extension TranslateSummaryTabViewController {
 
 extension TranslateSummaryTabViewController: UIKeyInput {
     var hasText: Bool {
-        false
+        true
     }
     
     func deleteBackward() {
-        pasteView.textField.text = ""
+        
     }
     
     func insertText(_ text: String) {
-        pasteView.textField.text = text
+        viewModel.appendScannedText(text)
     }
 }
